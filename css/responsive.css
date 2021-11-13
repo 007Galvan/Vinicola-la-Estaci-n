@@ -1,0 +1,22 @@
+@media screen and (max-width: 769px) {
+    header {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .add-to-cart {
+        padding: 10px 15px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .cards {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+    .hero {
+        flex-direction: row;
+    }
+}

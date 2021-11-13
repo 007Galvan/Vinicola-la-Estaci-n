@@ -1,0 +1,133 @@
+:root {
+    --main-bg-color: #802bd6;
+    --text-color: #0a0a0a;
+}
+.hero {
+    padding-left: 50px;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main-container {
+    height: 500px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-bg-color);
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: var(--text-color);
+}
+.brand-name {
+    transition: 0.4s color;
+}
+.brand-name:hover {
+    color: #fff;
+    cursor: pointer;
+}
+nav > a:hover {
+    color: #fff;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav > a {
+    margin-left: 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.4s color;
+}
+ul > li {
+    text-decoration: none;
+}
+h1 {
+    font-size: 6em;
+    word-spacing: -10px;
+    color: var(--text-color);
+}
+h1, .home-text {
+    position: relative;
+    bottom: 80px;
+    font-weight: bold;
+}
+.home-text {
+    color: var(--text-color);
+}
+.hero-img {
+    width: 350px;
+    height: auto;
+}
+.hero-button {
+    padding: 15px;
+    border-radius: 50px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+}
+.card > p {
+    font-weight: bold;
+}
+.cards {
+    max-width: 900px;
+    margin: 50px auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+    padding: 1rem;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid gray;
+    text-align: center;
+}
+.card-img {
+    width: 100%;
+    height: auto;
+}
+.add-to-cart {
+    background-color: var(--main-bg-color);
+    padding: 10px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    text-align: center;
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 15px;
+  }
+  .dropdown-content a {
+    color: #fff;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+  }
+    .dropdown-content a:hover {background-color: var(--main-bg-color); border-radius: 15px;}
+  .dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 15px;
+
+  }
+  .dropdown:hover .dropbtn {
+    background-color: var(--main-bg-color);
+    border-radius: 15px;
+  }
