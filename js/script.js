@@ -19,16 +19,21 @@ window.addEventListener('DOMContentLoaded', validarUsuario());
 const login = () => {
     let parsedUsers = JSON.parse(localStorage.getItem("usuarios"));
 
-    if (parsedUsers.some(x => x.email === email.value)) {
-        let found = parsedUsers.filter(x => x.email === email.value);
-        if (password.value === atob(found[0].password)) {
-            location.href = "./home.html";
-            alert("Acceso correcto");
+    if(email.value==="admin@correo.com" && password.value === "admin123"){
+        location.href = "./panel.html";
+    }
+    else{
+        if (parsedUsers.some(x => x.email === email.value)) {
+            let found = parsedUsers.filter(x => x.email === email.value);
+            if (password.value === atob(found[0].password)) {
+                location.href = "./products.html";
+                alert("Acceso correcto");
+            } else {
+                alert("Contraseña incorrecta"); 
+                password.value = "";
+            }
         } else {
-            alert("Contraseña incorrecta");
-            password.value = "";
+            alert("El correo no existe en el sistema");
         }
-    } else {
-        alert("El correo no existe en el sistema");
     }
 }
