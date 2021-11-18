@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 var nombreP=document.getElementById('nombre');
 var precioP=document.getElementById('precio');
 var stockP=document.getElementById('stock');
@@ -58,7 +56,6 @@ function mostrarFormulario(){
 function quitarFormulario(){
     formulario.style.display='none';
 }
-=======
 var products = document.getElementById('products')
 var users = document.querySelector('usersIn')
 var sales = document.querySelector('salesIn')
@@ -102,4 +99,3 @@ deleteb.addEventListener('click', () => {
 
 })
 //sales
->>>>>>> d59c860e92f09b9d42810064f19676570c4de852
