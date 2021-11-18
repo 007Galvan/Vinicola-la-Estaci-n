@@ -43,3 +43,12 @@ body {
 a {
     text-decoration: none;
 }
+.formRegistro{
+    width: 500px;
+    display: none;
+}
+.form-control{
+    width: 350px;
+    height: 20px;
+    color: black
+}

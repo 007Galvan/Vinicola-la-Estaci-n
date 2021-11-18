@@ -90,7 +90,7 @@ h1, .home-text {
 }
 .card-img {
     width: 100%;
-    height: auto;
+    height: 220px;
 }
 .add-to-cart {
     background-color: var(--main-bg-color);
@@ -130,4 +130,10 @@ h1, .home-text {
   .dropdown:hover .dropbtn {
     background-color: var(--main-bg-color);
     border-radius: 15px;
+  }
+  .quitarFormulario{
+      width: 5px;
+      margin-left: 90%;
+      margin-top: -30px;
+      background-color: #290628;
   }

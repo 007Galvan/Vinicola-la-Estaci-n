@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <title>Wineshop</title>
 </head>
@@ -13,8 +14,7 @@
     <header>
         <p class="brand-name">La Estación</p>
         <nav>
-            <a href="">Administrar Productos</a>
-            <a href="">Administrar Usuarios</a>
+            <a href="">Administrador</a>
         </nav>
         <nav>
             <div class="dropdown">
@@ -27,8 +27,40 @@
             <a href=""><img src="./img/icons/shopping-cart.png" width="30px" alt=""></a>
         </nav>
     </header>
+
+    
+    <button class="add-to-cart" onclick="mostrarFormulario()"><b>Agregar Producto</b></button>
+
+				<form action="javascript:void(0);" class="formRegistro" id="formulario">
+                    <button class="quitarFormulario"  onclick="quitarFormulario()"  >&times;</button>
+				<div class="form-group">
+				<p>Nombre del Producto</p>
+				<input class="form-control" type="text" id="nombre" style="border-color: mediumpurple;">
+				</div>
+			    <div class="form-group">
+				<p>Stock</p>
+				<input class="form-control" type="number" id="stock" style="border-color: mediumpurple;">
+			     </div>
+			     <div class="form-group">
+				<p>Detalle</p>
+				<input class="form-control" type="text" id="detalle" style="border-color: mediumpurple;">
+			    </div>
+			    <div class="form-group">
+				<p>Precio</p>
+				<input class="form-control" type="number" id="precio" style="border-color: mediumpurple;">
+				<div class="form-group">
+				<p>Imagen del producto</p>
+				<input class="form-control"type="file" name="archivosubido" id="imagen" onchange="obtImg()" style="border-color: mediumpurple;">
+                </div>
+				<br>
+
+				<button class="add-to-cart" type="submit" onclick="agregarProducto()"><b>Registrar</b></button>
+				</form>
+
+            
+
     <!-- panel  -->
 
-
+<script src="js/panel.js"></script>
 </body>
 </html>
