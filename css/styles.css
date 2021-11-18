@@ -149,13 +149,8 @@ h1,
 }
 
 .card-img {
-<<<<<<< HEAD
-    width: 100%;
-    height: 220px;
-=======
     width : 100%;
     height: auto;
->>>>>>> d59c860e92f09b9d42810064f19676570c4de852
 }
 
 .add-to-cart {
@@ -198,7 +193,6 @@ h1,
 .dropdown:hover .dropdown-content {
     display      : block;
     border-radius: 15px;
-<<<<<<< HEAD
   }
   .quitarFormulario{
       width: 5px;
@@ -206,9 +200,6 @@ h1,
       margin-top: -30px;
       background-color: #290628;
   }
-=======
-
-}
 
 .dropdown:hover .dropbtn {
     background-color: var(--main-bg-color);
@@ -429,4 +420,3 @@ thead th {
 #sales thead th:nth-child(1) {
     width: 15%;
 }
->>>>>>> d59c860e92f09b9d42810064f19676570c4de852
