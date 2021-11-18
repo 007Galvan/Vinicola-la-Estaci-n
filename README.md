@@ -1,3 +1,3 @@
 # la-estacion
 
-Proyecto escolar de una vínicola 👍🤑🍇
+Proyecto escolar de una vinícola 👍🤑🍇
