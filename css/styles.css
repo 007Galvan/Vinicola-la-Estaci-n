@@ -160,6 +160,13 @@ h1,
     text-decoration : none;
     color           : #fff;
 }
+.button-add {
+    background-color: var(--main-bg-color);
+    padding         : 10px 30px;
+    border-radius   : 50px;
+    text-decoration : none;
+    color           : #fff;
+}
 
 /* Dropdown */
 .dropdown {
@@ -216,7 +223,7 @@ h1,
 }
 
 .content h2 {
-    color    : #424242;
+    color    : var(--text-color);
     font-size: 34px;
 }
 
@@ -230,11 +237,15 @@ div#box .box-top {
     padding    : 15px;
     font-weight: 300;
     font-size  : 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 div#box .box-panel {
     padding   : 15px;
     background: #fff;
+    border-radius: 15px;
 }
 
 
@@ -249,11 +260,11 @@ div#box .box-panel {
 }
 
 #card {
-    /* float     : left; */
     position     : relative;
     display      : block;
-    min-width    : 300px;
-    min-height   : 600px;
+    min-width    : 250px;
+    max-width: 300px;
+    height       :     400px;
     border-radius: 10px;
     overflow     : hidden;
     margin       : 15px;
@@ -336,6 +347,7 @@ tr {
 td {
     padding   : 10px 10px 0;
     text-align: center;
+    color: #000;
 }
 
 table {

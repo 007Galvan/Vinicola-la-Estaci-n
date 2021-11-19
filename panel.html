@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
-    <title>Wineshop</title>
+    <title>La Estación</title>
 </head>
 
 <body>
@@ -29,44 +29,44 @@
             <a href=""><img src="./img/icons/shopping-cart.png" width="30px" alt=""></a>
         </nav>
     </header>
-    <button class="add-to-cart" onclick="mostrarFormulario()"><b>Agregar Producto</b></button>
-
-				<form action="javascript:void(0);" class="formRegistro" id="formulario">
-                    <button class="quitarFormulario"  onclick="quitarFormulario()"  >&times;</button>
-				<div class="form-group">
-				<p>Nombre del Producto</p>
-				<input class="form-control" type="text" id="nombre" style="border-color: mediumpurple;">
-				</div>
-			    <div class="form-group">
-				<p>Stock</p>
-				<input class="form-control" type="number" id="stock" style="border-color: mediumpurple;">
-			     </div>
-			     <div class="form-group">
-				<p>Detalle</p>
-				<input class="form-control" type="text" id="detalle" style="border-color: mediumpurple;">
-			    </div>
-			    <div class="form-group">
-				<p>Precio</p>
-				<input class="form-control" type="number" id="precio" style="border-color: mediumpurple;">
-				<div class="form-group">
-				<p>Imagen del producto</p>
-				<input class="form-control"type="file" name="archivosubido" id="imagen" onchange="obtImg()" style="border-color: mediumpurple;">
-                </div>
-				<br>
-
-				<button class="add-to-cart" type="submit" onclick="agregarProducto()"><b>Registrar</b></button>
-				</form>
-
-            
 
     <!-- panel  -->
-    <!-- panel  -->
+
     <div class="content">
-        <h2>Administration panel</h2>
+        <h2>Panel de administración</h2>
 
         <div id="box">
         <!-- cards  -->
-            <div class="box-top">Products</div>
+            <div class="box-top">
+                <p>Productos</p>
+                <button class="button-add" onclick="mostrarFormulario()"><b>Agregar Producto</b></button>
+            </div>
+            <div>
+            <form action="javascript:void(0);" class="formRegistro" id="formulario">
+                <button class="quitarFormulario"  onclick="quitarFormulario()"  >&times;</button>
+                <div class="form-group">
+                <p>Nombre del Producto</p>
+                <input class="form-control" type="text" id="nombre" style="border-color: mediumpurple;">
+                </div>
+                 <div class="form-group">
+                <p>Stock</p>
+                <input class="form-control" type="number" id="stock" style="border-color: mediumpurple;">
+                 </div>
+                 <div class="form-group">
+                <p>Detalle</p>
+                <input class="form-control" type="text" id="detalle" style="border-color: mediumpurple;">
+                </div>
+                <div class="form-group">
+                <p>Precio</p>
+                <input class="form-control" type="number" id="precio" style="border-color: mediumpurple;">
+                <div class="form-group">
+                <p>Imagen del producto</p>
+                <input class="form-control"type="file" name="archivosubido" id="imagen" onchange="obtImg()" style="border-color: mediumpurple;">
+                </div>
+                <br>
+                <button class="add-to-cart" type="submit" onclick="agregarProducto()"><b>Registrar</b></button>
+            </form>
+        </div>
             <div class="box-panel" id="products">
                 <div class="image-block" id="card">
                     <h1>nombre</h1>
@@ -169,7 +169,10 @@
         <!-- cards -->
         <!-- users -->
         <div id="box">
-            <div class="box-top">users</div>
+            <div class="box-top">
+                <p>Usuarios</p>
+                <button class="button-add" onclick="mostrarFormulario()"><b>Agregar usuario</b></button>
+            </div>
             <div class="box-panel">
                 <table id="users">
                     <thead>
@@ -204,7 +207,9 @@
         <!-- users -->
         <!-- sales -->
         <div id="box">
-            <div class="box-top">sales history</div>
+            <div class="box-top">
+                <p>Pedidos</p>
+            </div>
             <div class="box-panel">
                 <table id="sales">
                     <thead>
@@ -238,6 +243,7 @@
     </div>
     <!-- panel -->
 
+   
 <script src="js/panel.js"></script>
 </body>
 

@@ -88,14 +88,14 @@ window.addEventListener('load', () => {
 })
 
 //products
-var deletep = document.getElementById('deleteP')
+const deletep = document.getElementById('deleteP')
 deletep.addEventListener('click', () => {
-
+    console.log("xxx");
 })
 
 //users
-var deleteu = document.querySelector('#button')
+const deleteu = document.querySelector('#button')
 deleteb.addEventListener('click', () => {
-
+    console.log("xxx");
 })
 //sales
