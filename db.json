@@ -8,25 +8,25 @@
     {
         "name": "GINEBRA BOMBAY BRAMBLE 700 ML",
         "price": 635,
-        "description": "lorem ipsum",
+        "description": "Bombay bramble, se une a la gama de bombay con una nueva ginebra con sabores naturales de moras y frambuesas que lo hace ideal para experimentar con coctelería. Emplea un proceso artesanal donde realiza una infusión al vapor muy característica de Bombay extrayendo los sabores, aromas y color de los botánicos y las frutas 100 % naturales.",
         "image": "base64 url"
     },
     {
         "name": "GINEBRA HENDRICKS LUNAR 750 ML",
         "price": 940,
-        "description": "lorem ipsum",
+        "description": "Hendricks lunar cuenta con fascinantes infusiones de rosa y pepino, es equilibrada y suave, única en la línea.",
         "image": "base64 url"
     },
     {
         "name": "WHISKY THE MACALLAN THE HARMONY RICH CACAO 700 ML",
         "price": 3700,
-        "description": "lorem ipsum",
+        "description": "Se elabora a partir de barricas de roble europeo y americano combinando una perfecta mezcla de chocolates finos, contiene notas de miel, roble, limón y jengibre, en paladar destaca exquisitos recuerdos de miel, dátiles, canela y vainilla su final es largo con deliciosos recuerdos de chocolate.",
         "image": "base64 url"
     },
     {
         "name": "LICOR JAGERMEISTER SAVE THE NIGHT 700 ML",
         "price": 365,
-        "description": "lorem ipsum",
+        "description": "SAVETHENIGHT es una iniciativa global por post Malone, su fin es apoyar a la comunidad de vida nocturna, parte de las ganancias van al Fondo Meister para continuar manteniendo viva la noche Recuerda que la magia de Jagermeister empieza cuando alcanza una temperatura de -18°.",
         "image": "base64 url"
     },
     {
@@ -38,37 +38,37 @@
     {
         "name": "VINO BLANCO DIAMANTE 750 ML",
         "price": 2005,
-        "description": "lorem ipsum",
+        "description": "Ideal para tomar como aperitivo, tiene aromas florales, frutas exóticas y notas de fruta madura, en boca es suave y untuoso.",
         "image": "base64 url"
     },
     {
         "name": "VINO BLANCO PATA NEGRA VERDEJO 750 ML",
         "price": 1300,
-        "description": "lorem ipsum",
+        "description": "Ideal para acompañar platillos ligeros, tiene aromas frutales a manzana verde, tonos herbáceos y anisados, en boca se percibe un equilibrio en acidez y frescura.",
         "image": "base64 url"
     },
     {
         "name": "VINO BLANCO PAZO SAN MAURO ALBARIÑO 750 ML",
         "price": 1905,
-        "description": "lorem ipsum",
+        "description": "Elaborado con la variedad albariño de intensidad alta afrutada, con destellos de flores blancas, en boca es fresco con persistencia de frutas blancas y citricos, su final es persistente. Ideal para acompañar mariscos, suchi, empanadas de maíz y arroz.",
         "image": "base64 url"
     },
     {
         "name": "VINO BLANCO PROTOS VERDEJO 750 ML",
         "price": 2005,
-        "description": "lorem ipsum",
+        "description": "Ideal para maridar con sushi y paella, tiene un aroma fresco a piña, cítricos y fruta blanca; en boca es seco con una larga persistencia que deja un grato recuerdo.",
         "image": "base64 url"
     },
     {
         "name": "VINO BLANCO VIÑAS DEL VERO LUCES CHARDONNAY 750 ML",
         "price": 1100,
-        "description": "lorem ipsum",
+        "description": "Ideal para acompañar entradas, tiene aromas con recuerdos frutales a albaricoque, melocotón, manzana, lima y vegetales, y un sabor agradable de paso muy limpio.",
         "image": "base64 url"
     },
     {
         "name": "WHISKY HIBIKI HARMONY EDICION 2021 750 ML",
         "price": 2005,
-        "description": "lorem ipsum",
+        "description": "Fabricado con malta de las destilerías Yamazaki y Hakushu, tiene un aroma suave y floral, con fuertes notas de pino, flor de azahar y notas de madera.",
         "image": "base64 url"
     }
 ]
