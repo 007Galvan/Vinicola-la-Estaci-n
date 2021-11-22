@@ -46,9 +46,18 @@ a {
 .formRegistro{
     width: 500px;
     display: none;
+
 }
 .form-control{
     width: 350px;
     height: 20px;
     color: black
+}
+.z-index{
+    z-index: 2;
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 0%;
+    
+    
 }
