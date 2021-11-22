@@ -17,7 +17,7 @@
         <nav>
             <a href="index.html">Inicio</a>
             <a href="">Nosotros</a>
-            <a href="#">Contáctanos</a>
+            <a href="contacto.html">Contáctanos</a>
         </nav>
         <nav>
             <div class="dropdown">
@@ -42,27 +42,27 @@
 				</span>
 
 				<div class="wrap-input1 validate-input" data-validate = "Nombre requerido.">
-					<input class="input1" type="text" name="name" placeholder="Nombre">
+					<input class="input1" type="text" name="name" placeholder="Nombre" id="nombre" required>
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Valida tu email: ex@corre.com">
-					<input class="input1" type="text" name="email" placeholder="Email">
+					<input class="input1" type="text" name="email" placeholder="Email" id="correo" required>
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Asunto requerido.">
-					<input class="input1" type="text" name="subject" placeholder="Asunto">
+					<input class="input1" type="text" name="subject" placeholder="Asunto" id="asunto" required>
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "El mensaje es requerido.">
-					<textarea class="input1" name="message" placeholder="Mensaje"></textarea>
+					<textarea class="input1" name="message" placeholder="Mensaje" id="mensaje" required></textarea>
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="container-contact1-form-btn">
-					<button class="contact1-form-btn">
+					<button class="contact1-form-btn" onclick="sendMessage()">
 						<span>
 							Enviar E-Mail.
 							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
