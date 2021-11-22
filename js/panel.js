@@ -6,15 +6,60 @@ var imagen=document.getElementById('imagen');
 var formulario=document.querySelector('#formulario');
 
 var productos=[];
-
-window.addEventListener('load', ()=> {
+var usuarios=[];
+var products = document.getElementById('products')
+var users = document.getElementById('usersIn')
+var sales = document.querySelector('salesIn')
+window.addEventListener('load', () => {
+    
     productos=JSON.parse(localStorage.getItem('productos'));
+    usuarios=JSON.parse(localStorage.getItem('usuarios'));
+    
 
     if (productos==null){
         productos=[];
+        products.innerHTML ="No hay productos que mostrar";
     }
+    if (usuarios==null){
+        usuarios=[];
+        users ="No hay usuarios"
+    }
+    productos.forEach(info=> {
+        products.innerHTML += `
+    <div class="image-block" id="card">
+    <img src="${info.imagen}" alt="" />
+    <div id="botton">
+    <h3>${info.nombre}</h3>
+    <h3>$ ${info.precio}</h3>
+        <h3>Stock ${info.stock}</h3>
+        <button id="deleteP">Eliminar</button>
+    </div>
+    </div>`})
 
-})
+    usuarios.forEach(user=> {
+        users.innerHTML += `
+        <tr>
+        <td>${user.name+" "+user.lastName}</td>
+        <td>${user.phone}</td>
+        <td>${user.email}</td>
+        <td>${user.password}</td>
+        <td class="delete"><a class="button">borrar</a></td>
+        </tr>`
+    
+        /*sales += `
+        <tr>
+        <td>${variable}</td>
+        <td>${variable}</td>
+        <td>${variable}</td>
+        </tr>`*/
+    })
+    
+    })
+ 
+/*window.addEventListener('load', ()=> {
+    
+
+})*/
 function obtImg(){
 
 	var file = document.querySelector('input[type=file]').files[0];
@@ -47,45 +92,22 @@ precioP.value="";
 stockP.value="";
 detalleP.value="";
 imagen.value="";
+location.reload()
 
 
 }
 function mostrarFormulario(){
-    formulario.style.display='block';
+    
+    formulario.style.display='block'
+    formulario.classList.add('z-index')
+    
 }
 function quitarFormulario(){
     formulario.style.display='none';
+
 }
-var products = document.getElementById('products')
-var users = document.querySelector('usersIn')
-var sales = document.querySelector('salesIn')
-window.addEventListener('load', () => {
-    products += `
-    <div class="image-block" id="card">
-    <h1>${variable}</h1>
-    <img src="${variable}" alt="" />
-    <div id="botton">
-        <h3>Stock ${variable}</h3>
-        <button id="deleteP">Eliminar</button>
-    </div>
-    </div>`
 
-    users += `
-    <tr>
-    <td>${variable}</td>
-    <td>${variable}</td>
-    <td>${variable}</td>
-    <td>${variable}</td>
-    <td class="delete"><a class="button">borrar</a></td>
-    </tr>`
 
-    sales += `
-    <tr>
-    <td>${variable}</td>
-    <td>${variable}</td>
-    <td>${variable}</td>
-    </tr>`
-})
 
 //products
 const deletep = document.getElementById('deleteP')
@@ -95,7 +117,8 @@ deletep.addEventListener('click', () => {
 
 //users
 const deleteu = document.querySelector('#button')
-deleteb.addEventListener('click', () => {
+/*deleteb.addEventListener('click', () => {
     console.log("xxx");
-})
+})*/
 //sales
+
