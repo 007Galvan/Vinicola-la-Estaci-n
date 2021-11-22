@@ -2,73 +2,73 @@
     {
         "name": "VINO BLANCO SANGRE DE TORO CLASICO 750 ML",
         "price": 625,
-        "description": "lorem ipsum",
-        "imagen": "url"
+        "description": "Ideal como aperitivo y como acompañante para arroz, mariscos y pescado. Tiene aromas florales a azahar sobre un fondo a manzana, plátano y lichi. Es muy ligero al paladar.",
+        "image": "base64 url"
     },
     {
         "name": "GINEBRA BOMBAY BRAMBLE 700 ML",
         "price": 635,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "GINEBRA HENDRICKS LUNAR 750 ML",
         "price": 940,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "WHISKY THE MACALLAN THE HARMONY RICH CACAO 700 ML",
         "price": 3700,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "LICOR JAGERMEISTER SAVE THE NIGHT 700 ML",
         "price": 365,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "VINO BLANCO BARBADILLO PALOMINO VERDEJO 750 ML",
         "price": 955,
-        "description": "lorem ipsum",
-        "imagen": "url"
+        "description": "Ideal para acompañar pollo y pavo. Tiene un sabor tropical y equilibrado. Volumen de alcohol: 12%",
+        "image": "base64 url"
     },
     {
         "name": "VINO BLANCO DIAMANTE 750 ML",
         "price": 2005,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "VINO BLANCO PATA NEGRA VERDEJO 750 ML",
         "price": 1300,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "VINO BLANCO PAZO SAN MAURO ALBARIÑO 750 ML",
         "price": 1905,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "VINO BLANCO PROTOS VERDEJO 750 ML",
         "price": 2005,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "VINO BLANCO VIÑAS DEL VERO LUCES CHARDONNAY 750 ML",
         "price": 1100,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     },
     {
         "name": "WHISKY HIBIKI HARMONY EDICION 2021 750 ML",
         "price": 2005,
         "description": "lorem ipsum",
-        "imagen": "url"
+        "image": "base64 url"
     }
 ]
