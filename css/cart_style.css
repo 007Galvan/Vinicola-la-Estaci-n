@@ -1,0 +1,51 @@
+#carttitle {
+    color: white;
+}
+
+#box {
+    font-size: 25px;
+}
+
+td {
+    text-align    : center;
+}
+
+.total {
+    color    : white;
+    font-size: 30px;
+    right    : 0;
+
+}
+
+.total .totals-item label {
+    float     : left;
+    width     : 79%;
+    text-align: right;
+
+}
+
+.total .totals-item .totals-value {
+    float     : right;
+    width     : 21%;
+    text-align: right;
+}
+
+.checkout {
+    float           : right;
+    border          : 0;
+    margin-top      : 20px;
+    padding         : 6px 25px;
+    background-color: #6b6;
+    color           : #fff;
+    font-size       : 25px;
+    border-radius   : 3px;
+
+}
+
+.checkout:hover {
+    background-color: #494;
+}
+
+.clearfix {
+    clear: both;
+}

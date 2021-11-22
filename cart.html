@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/cart_style.css">
+    <title>La Estación</title>
+</head>
+
+<body>
+    <header>
+        <p class="brand-name">La Estación</p>
+        <nav>
+            <a href="">Administrador</a>
+        </nav>
+        <nav>
+            <div class="dropdown">
+                <a href=""><img src="./img/icons/profile-user.png" width="30px" alt=""></a>
+                <div class="dropdown-content">
+                    <a href="./login.html">Iniciar sesión</a>
+                    <a href="./registro.html">Registrarse</a>
+                </div>
+            </div>
+            <a href=""><img src="./img/icons/shopping-cart.png" width="30px" alt=""></a>
+        </nav>
+    </header>
+
+    <!-- cart  -->
+    <div class="content">
+        <h2 id="carttitle">Carrito de Compras</h2>
+        <!-- products -->
+        <div id="box">
+            <div class="box-panel">
+                <table id="sales">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th></th>
+                            <th>Precio</th>
+                            <th>cantidad</th>
+                            <th></th>
+                            <th>total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesIn">
+                        <tr>
+                            <td><img src="https://via.placeholder.com/150" alt=""></td>
+                            <td>mezcal aleron</td>
+                            <td>1000</td>
+                            <td><button type="">+</button> 1 <button type="">-</button></td>
+                            <td><button type="">borrar</button></td>
+                            <td>1000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- products -->
+            <!-- totals -->
+            <div class="total">
+                <div class="totals-item totals-item-total">
+                    <label>Total</label>
+                    <div class="totals-value" id="total">90.57</div>
+                </div>
+            </div>
+
+            <button class="checkout">Checkout</button>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- cart -->
+
+
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
