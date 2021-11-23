@@ -37,7 +37,8 @@ window.addEventListener('load', () => {
 function buy(producto) {
     console.log('se agrego el producto ' + producto);
     var cart = {
-        id: producto
+        id: producto,
+        stock: 1
     }
 
     carrito.push(cart);
