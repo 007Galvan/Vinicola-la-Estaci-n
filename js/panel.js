@@ -15,9 +15,11 @@ window.addEventListener('load', () => {
     productos = JSON.parse(localStorage.getItem('products'));
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
-    if (productos == null) {
+    if (productos.length == 0) {
         productos = [];
+        //console.log("productos.length = 0");
         products.innerHTML = "No hay productos que mostrar";
+        renderData();
     }
     if (usuarios == null) {
         usuarios = [];
@@ -37,23 +39,16 @@ window.addEventListener('load', () => {
             </div>`})
         
 
-    usuarios.forEach(user => {
+    usuarios.slice(1).forEach(user => {
         users.innerHTML += `
         <tr>
         <td>${user.name + " " + user.lastName}</td>
         <td>${user.phone}</td>
         <td>${user.email}</td>
-        <td>${user.password}</td>
-        <td class="delete"><a class="button">borrar</a></td>
+        <td>${atob(user.password)}</td>
+        <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
         </tr>`
-
-        /*sales += `
-        <tr>
-        <td>${variable}</td>
-        <td>${variable}</td>
-        <td>${variable}</td>
-        </tr>`*/
-    })
+    });
 
 })
 
@@ -75,6 +70,19 @@ const renderData = () => {
         <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
     </div>
     </div>`})
+}
+const renderUsers = () => {
+    users.innerHTML = "";
+    JSON.parse(localStorage.getItem("usuarios")).slice(1).forEach(user => {
+        users.innerHTML += `
+        <tr>
+        <td>${user.name + " " + user.lastName}</td>
+        <td>${user.phone}</td>
+        <td>${user.email}</td>
+        <td>${atob(user.password)}</td>
+        <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
+        </tr>`
+    });
 }
 
 function obtImg() {
@@ -146,9 +154,17 @@ function removeProduct(ID) {
     renderData();
 }
 
-//users
-//const deleteu = document.querySelector('#button')
-/*deleteb.addEventListener('click', () => {
-    console.log("xxx");
-})*/
-//sales
+function removeUser(mail) {
+    let usersLS = JSON.parse(localStorage.getItem("usuarios"));
+
+    let found = usersLS.find(x => x.email == mail)
+
+    const index = usersLS.indexOf(found);
+    if (index > - 1) {
+        usersLS.splice(index, 1);
+    }
+
+    localStorage.setItem("usuarios", JSON.stringify(usersLS));
+
+    renderUsers();
+}

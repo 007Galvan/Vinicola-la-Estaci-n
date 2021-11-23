@@ -10,7 +10,7 @@ let password = document.querySelector("#inputPassword");
 
 const validarUsuario = () => {
     if (!localStorage.getItem("usuarios")) {
-        console.log("Sin valores previos en primera carga, agregando datos...");
+        console.log("Sin valores previos en primera carga, agregando admin...");
         localStorage.setItem("usuarios", `[${JSON.stringify(administrador)}]`);
     }
 }
