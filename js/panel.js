@@ -12,7 +12,7 @@ var users = document.getElementById('usersIn')
 var sales = document.querySelector('salesIn')
 window.addEventListener('load', () => {
 
-    productos = JSON.parse(localStorage.getItem('productos'));
+    productos = JSON.parse(localStorage.getItem('products'));
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
 
@@ -27,10 +27,10 @@ window.addEventListener('load', () => {
     productos.forEach(info => {
         products.innerHTML += `
     <div class="image-block" id="card">
-    <img src="${info.imagen}" alt="" />
+    <img src="${info.image}" alt="" />
     <div id="botton">
-    <h3>${info.nombre}</h3>
-    <h3>$ ${info.precio}</h3>
+    <h3>${info.name}</h3>
+    <h3>$ ${info.price}</h3>
         <h3>Stock ${info.stock}</h3>
         <button id="deleteP">Eliminar</button>
     </div>
