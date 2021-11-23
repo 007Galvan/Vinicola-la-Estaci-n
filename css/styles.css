@@ -459,7 +459,7 @@ thead th {
     border-color: var(--text-color); 
 }
 
- h3{
+ #h3{
     color: var(--text-color);
     font-family: cursive;
 }
