@@ -15,7 +15,6 @@ window.addEventListener('load', () => {
     productos = JSON.parse(localStorage.getItem('products'));
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
-
     if (productos == null) {
         productos = [];
         products.innerHTML = "No hay productos que mostrar";
@@ -32,7 +31,7 @@ window.addEventListener('load', () => {
     <h3>${info.name}</h3>
     <h3>$ ${info.price}</h3>
         <h3>Stock ${info.stock}</h3>
-        <button id="deleteP">Eliminar</button>
+        <button id="${info.id}" onclick="removeProduct(this.id)">Eliminar</button>
     </div>
     </div>`})
 
@@ -113,18 +112,23 @@ function quitarFormulario() {
 
 }
 
-
-
 //products
-const deletep = document.getElementById('deleteP')
-deletep.addEventListener('click', () => {
-    console.log("xxx");
-})
+function removeProduct() {
+    let productsLS = JSON.parse(localStorage.getItem("products"));
+
+    const index = productsLS.indexOf(/* objeto */);
+    if (index > -1) {
+        productsLS.splice(index, 1);
+    }
+
+    console.log(productsLS); 
+
+    console.log(this.id);
+}
 
 //users
-const deleteu = document.querySelector('#button')
+//const deleteu = document.querySelector('#button')
 /*deleteb.addEventListener('click', () => {
     console.log("xxx");
 })*/
 //sales
-
