@@ -23,17 +23,19 @@ window.addEventListener('load', () => {
         usuarios = [];
         users = "No hay usuarios"
     }
-    productos.forEach(info => {
-        products.innerHTML += `
-    <div class="image-block" id="card">
-    <img src="${info.image}" alt="" />
-    <div id="botton">
-    <h3>${info.name}</h3>
-    <h3>$ ${info.price}</h3>
-        <h3>Stock ${info.stock}</h3>
-        <button id="${info.id}" onclick="removeProduct(this.id)">Eliminar</button>
-    </div>
-    </div>`})
+            productos.forEach(info => {
+                products.innerHTML += `
+            <div class="image-block" id="card">
+            <img src="${info.image}" alt="" />
+            <div id="botton">
+            <p>ID: ${info.id}</p>
+            <h3>${info.name}</h3>
+            <h3>$ ${info.price}</h3>
+                <h3>Stock ${info.stock}</h3>
+                <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
+            </div>
+            </div>`})
+        
 
     usuarios.forEach(user => {
         users.innerHTML += `
@@ -59,6 +61,22 @@ window.addEventListener('load', () => {
     
 
 })*/
+const renderData = () => {
+    products.innerHTML = "";
+    JSON.parse(localStorage.getItem("products")).forEach(info => {
+        products.innerHTML += `
+    <div class="image-block" id="card">
+    <img src="${info.image}" alt="" />
+    <div id="botton">
+    <p>ID: ${info.id}</p>
+    <h3>${info.name}</h3>
+    <h3>$ ${info.price}</h3>
+        <h3>Stock ${info.stock}</h3>
+        <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
+    </div>
+    </div>`})
+}
+
 function obtImg() {
 
     var file = document.querySelector('input[type=file]').files[0];
@@ -113,17 +131,19 @@ function quitarFormulario() {
 }
 
 //products
-function removeProduct() {
+function removeProduct(ID) {
     let productsLS = JSON.parse(localStorage.getItem("products"));
 
-    const index = productsLS.indexOf(/* objeto */);
-    if (index > -1) {
+    let found = productsLS.find(x => x.id == ID)
+
+    const index = productsLS.indexOf(found);
+    if (index > - 1) {
         productsLS.splice(index, 1);
     }
 
-    console.log(productsLS); 
+    localStorage.setItem("products", JSON.stringify(productsLS));
 
-    console.log(this.id);
+    renderData();
 }
 
 //users
