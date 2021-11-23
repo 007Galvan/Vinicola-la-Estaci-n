@@ -1,30 +1,30 @@
-var nombreP=document.getElementById('nombre');
-var precioP=document.getElementById('precio');
-var stockP=document.getElementById('stock');
-var detalleP=document.getElementById('detalle');
-var imagen=document.getElementById('imagen');
-var formulario=document.querySelector('#formulario');
+var nombreP = document.getElementById('nombre');
+var precioP = document.getElementById('precio');
+var stockP = document.getElementById('stock');
+var detalleP = document.getElementById('detalle');
+var imagen = document.getElementById('imagen');
+var formulario = document.querySelector('#formulario');
 
-var productos=[];
-var usuarios=[];
+var productos = [];
+var usuarios = [];
 var products = document.getElementById('products')
 var users = document.getElementById('usersIn')
 var sales = document.querySelector('salesIn')
 window.addEventListener('load', () => {
-    
-    productos=JSON.parse(localStorage.getItem('productos'));
-    usuarios=JSON.parse(localStorage.getItem('usuarios'));
-    
 
-    if (productos==null){
-        productos=[];
-        products.innerHTML ="No hay productos que mostrar";
+    productos = JSON.parse(localStorage.getItem('productos'));
+    usuarios = JSON.parse(localStorage.getItem('usuarios'));
+
+
+    if (productos == null) {
+        productos = [];
+        products.innerHTML = "No hay productos que mostrar";
     }
-    if (usuarios==null){
-        usuarios=[];
-        users ="No hay usuarios"
+    if (usuarios == null) {
+        usuarios = [];
+        users = "No hay usuarios"
     }
-    productos.forEach(info=> {
+    productos.forEach(info => {
         products.innerHTML += `
     <div class="image-block" id="card">
     <img src="${info.imagen}" alt="" />
@@ -36,16 +36,16 @@ window.addEventListener('load', () => {
     </div>
     </div>`})
 
-    usuarios.forEach(user=> {
+    usuarios.forEach(user => {
         users.innerHTML += `
         <tr>
-        <td>${user.name+" "+user.lastName}</td>
+        <td>${user.name + " " + user.lastName}</td>
         <td>${user.phone}</td>
         <td>${user.email}</td>
         <td>${user.password}</td>
         <td class="delete"><a class="button">borrar</a></td>
         </tr>`
-    
+
         /*sales += `
         <tr>
         <td>${variable}</td>
@@ -53,30 +53,36 @@ window.addEventListener('load', () => {
         <td>${variable}</td>
         </tr>`*/
     })
-    
-    })
- 
+
+})
+
 /*window.addEventListener('load', ()=> {
     
 
 })*/
-function obtImg(){
+function obtImg() {
 
-	var file = document.querySelector('input[type=file]').files[0];
-	var leer = new FileReader();
-	leer.readAsDataURL(file);
+    var file = document.querySelector('input[type=file]').files[0];
+    var leer = new FileReader();
+    leer.readAsDataURL(file);
 
-	leer.addEventListener('load', () => {localStorage.setItem('imgTemp', leer.result)} )
+    leer.addEventListener('load', () => { localStorage.setItem('imgTemp', leer.result) })
 }
 
-function agregarProducto(){
+function GetId() {
+    let uniq = (new Date()).getTime();
+    return uniq
+}
 
-    var objeto={
-    nombre: nombreP.value,
-    precio: precioP.value,
-    stock: stockP.value,
-    detalle: detalleP.value,
-    imagen: localStorage.getItem('imgTemp')
+function agregarProducto() {
+
+    var objeto = {
+        id: GetId(),
+        nombre: nombreP.value,
+        precio: precioP.value,
+        stock: stockP.value,
+        detalle: detalleP.value,
+        imagen: localStorage.getItem('imgTemp')
 
     }
 
@@ -84,26 +90,26 @@ function agregarProducto(){
     productos.push(objeto);
 
     localStorage.setItem('productos', JSON.stringify(productos))
-    alert('Se registro '+nombreP.value)
+    alert('Se registro ' + nombreP.value)
 
-    
-nombreP.value="";
-precioP.value="";
-stockP.value="";
-detalleP.value="";
-imagen.value="";
-location.reload()
+
+    nombreP.value = "";
+    precioP.value = "";
+    stockP.value = "";
+    detalleP.value = "";
+    imagen.value = "";
+    location.reload()
 
 
 }
-function mostrarFormulario(){
-    
-    formulario.style.display='block'
+function mostrarFormulario() {
+
+    formulario.style.display = 'block'
     formulario.classList.add('z-index')
-    
+
 }
-function quitarFormulario(){
-    formulario.style.display='none';
+function quitarFormulario() {
+    formulario.style.display = 'none';
 
 }
 
