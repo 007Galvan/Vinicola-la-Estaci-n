@@ -38,7 +38,7 @@ function buy(producto) {
     console.log('se agrego el producto ' + producto);
     var cart = {
         id: producto,
-        cant: 1
+        stock: 1
     }
 
     carrito.push(cart);
