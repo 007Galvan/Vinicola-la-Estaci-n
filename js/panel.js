@@ -11,12 +11,16 @@ var products = document.getElementById('products')
 var users = document.getElementById('usersIn')
 var sales = document.querySelector('salesIn')
 var sell = []
+
 window.addEventListener('load', () => {
 
     productos = JSON.parse(localStorage.getItem('products'));
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     sell = JSON.parse(localStorage.getItem('sells'));
 
+    console.log(productos);
+    console.log(usuarios);
+    console.log(sell);
 
     if (productos.length == 0) {
         productos = [];
@@ -26,12 +30,13 @@ window.addEventListener('load', () => {
     }
     if (usuarios == null) {
         usuarios = [];
-        users = "No hay usuarios"
+        users.innerHTML = "No hay usuarios"
     }
     if (sell == null) {
         sell = [];
-        users = "No hay ventas"
+        users.innerHTML = "No hay ventas"
     }
+    
     productos.forEach(info => {
         products.innerHTML += `
             <div class="image-block" id="card">
@@ -43,28 +48,31 @@ window.addEventListener('load', () => {
                 <h3>Stock ${info.stock}</h3>
                 <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
             </div>
-            </div>`})
-
-    sell.forEach(info => {
-        products.innerHTML += `
-        <tr>
-        <td>Alejandro Orbe</td>
-        <td>mezcal aleron</td>
-        <td>1000</td>
-        </tr>
-        `})
-
+            </div>`
+    })
 
     usuarios.slice(1).forEach(user => {
         users.innerHTML += `
-        <tr>
-        <td>${user.name + " " + user.lastName}</td>
-        <td>${user.phone}</td>
-        <td>${user.email}</td>
-        <td>${atob(user.password)}</td>
-        <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
-        </tr>`
+                <tr>
+                <td>${user.name + " " + user.lastName}</td>
+                <td>${user.phone}</td>
+                <td>${user.email}</td>
+                <td>${atob(user.password)}</td>
+                <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
+                </tr>`
     });
+
+
+    sell.forEach(orders => {
+        sales.innerHTML += `
+        <tr>
+        <td>${orders.user}</td>
+        <td>${orders.productos}</td>
+        <td>${orders.total}</td>
+        </tr>`
+    })
+
+
 
 })
 
