@@ -9,8 +9,9 @@ var productos = [];
 var usuarios = [];
 var products = document.getElementById('products')
 var users = document.getElementById('usersIn')
-var sales = document.querySelector('salesIn')
+var sales = document.getElementById('salesIn')
 var sell = []
+var compras
 
 window.addEventListener('load', () => {
 
@@ -36,7 +37,7 @@ window.addEventListener('load', () => {
         sell = [];
         users.innerHTML = "No hay ventas"
     }
-    
+
     productos.forEach(info => {
         products.innerHTML += `
             <div class="image-block" id="card">
@@ -67,7 +68,7 @@ window.addEventListener('load', () => {
         sales.innerHTML += `
         <tr>
         <td>${orders.user}</td>
-        <td>${orders.productos}</td>
+        <td>${displaysells(orders.id)}</td>
         <td>${orders.total}</td>
         </tr>`
     })
@@ -194,3 +195,10 @@ function removeUser(mail) {
 }
 
 //sells
+function displaysells(orders){
+    let hola = sell[0].prodcutos[0].id
+    let compra = productos.find(productos => productos.id === hola);
+    
+console.log(compra);
+    return compra.name
+}
