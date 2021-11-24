@@ -10,10 +10,13 @@ var usuarios = [];
 var products = document.getElementById('products')
 var users = document.getElementById('usersIn')
 var sales = document.querySelector('salesIn')
+var sell = []
 window.addEventListener('load', () => {
 
     productos = JSON.parse(localStorage.getItem('products'));
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
+    sell = JSON.parse(localStorage.getItem('sells'));
+
 
     if (productos.length == 0) {
         productos = [];
@@ -25,8 +28,12 @@ window.addEventListener('load', () => {
         usuarios = [];
         users = "No hay usuarios"
     }
-            productos.forEach(info => {
-                products.innerHTML += `
+    if (sell == null) {
+        sell = [];
+        users = "No hay ventas"
+    }
+    productos.forEach(info => {
+        products.innerHTML += `
             <div class="image-block" id="card">
             <img src="${info.image}" alt="" />
             <div id="botton">
@@ -37,7 +44,16 @@ window.addEventListener('load', () => {
                 <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
             </div>
             </div>`})
-        
+
+    sell.forEach(info => {
+        products.innerHTML += `
+        <tr>
+        <td>Alejandro Orbe</td>
+        <td>mezcal aleron</td>
+        <td>1000</td>
+        </tr>
+        `})
+
 
     usuarios.slice(1).forEach(user => {
         users.innerHTML += `
@@ -168,3 +184,5 @@ function removeUser(mail) {
 
     renderUsers();
 }
+
+//sells
