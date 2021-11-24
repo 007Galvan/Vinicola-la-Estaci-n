@@ -44,12 +44,12 @@ a {
     text-decoration: none;
 }
 .formRegistro{
-    width: 500px;
+    width: 550px;
     display: none;
 
 }
 .form-control{
-    width: 350px;
+    width: 260px;
     height: 20px;
     color: black
 }
