@@ -91,7 +91,9 @@ function del(id) {
     localStorage.setItem('carrito', JSON.stringify(delet))
     render()
 }
-
+if(localStorage.getItem('sells') == null) {
+    localStorage.setItem('sells', '[]')
+}
 out.addEventListener('click', () => {
     let sells= JSON.parse(localStorage.getItem('sells'))
     let venta = {

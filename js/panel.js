@@ -19,9 +19,7 @@ window.addEventListener('load', () => {
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     sell = JSON.parse(localStorage.getItem('sells'));
 
-    console.log(productos);
-    console.log(usuarios);
-    console.log(sell);
+    //console.log(sell);
 
     if (productos.length == 0) {
         productos = [];
@@ -68,7 +66,7 @@ window.addEventListener('load', () => {
         sales.innerHTML += `
         <tr>
         <td>${orders.user}</td>
-        <td>${displaysells(orders.id)}</td>
+        <td>${displaysells(orders.prodcutos)}</td>
         <td>${orders.total}</td>
         </tr>`
     })
@@ -195,10 +193,15 @@ function removeUser(mail) {
 }
 
 //sells
-function displaysells(orders){
-    let hola = sell[0].prodcutos[0].id
-    let compra = productos.find(productos => productos.id === hola);
-    
-console.log(compra);
-    return compra.name
+function displaysells(orders) {
+    let ids = orders.map(x => x.id)
+    console.log(orders);
+
+    let name = ''
+    for (let i = 0; i < ids.length; i++) {
+        compra = productos.filter(productos => productos.id === ids[i]);
+        name += compra[0].name +" cantidad "+ orders[i].stock + "<br>";
+    }
+   
+   return name
 }

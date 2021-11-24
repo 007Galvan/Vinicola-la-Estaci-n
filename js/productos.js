@@ -31,8 +31,9 @@ window.addEventListener('load', () => {
         carrito = [];
     }
 })
-
-
+if(localStorage.getItem('carrito') == null) {
+    localStorage.setItem('carrito', '[]')
+}
 // prueba compra carrito
 function buy(producto) {
     console.log('se agrego el producto ' + producto);
@@ -41,7 +42,26 @@ function buy(producto) {
         stock: 1
     }
 
-    carrito.push(cart);
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-    
+    let carritols = JSON.parse(localStorage.getItem('carrito'))
+    let founded = carritols.find(x => x.id == cart.id)
+console.log(founded);
+    if (founded == null) {
+        carritols.push(cart);
+        localStorage.setItem('carrito', JSON.stringify(carritols))
+    }else{
+        // carritols = JSON.parse(localStorage.getItem('carrito'))
+        // const index = carritols.indexOf(founded);
+        // console.log(index);
+        
+        // if (index > - 1) {
+        //     console.log(index);
+
+        //     carritols.splice(index, 1);
+        // }
+        // // carritols[index].stock++
+        // cart.stock++
+        // carritols.push(cart);
+        // localStorage.setItem('carrito', JSON.stringify(carritols))
+        alert('el producto ya se encuentra en el carrito')
+    }
 }
