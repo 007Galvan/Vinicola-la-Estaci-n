@@ -14,8 +14,6 @@ window.addEventListener('load', () => {
     else if (carrito == null) alert('agrega productos al carrito')
     else getcart()
 
-    console.log(carrito)
-    console.log(productos)
 })
 
 function getcart() {
@@ -24,10 +22,9 @@ function getcart() {
         content.innerHTML += `
             <tr>
             <td><img src="${compra.image}" alt="" id="imgcart">${compra.name}</td>
-            <td>${compra.description}</td>
-            <td>${compra.price}</td>
-            <td><button onClick="morestock(${data.id})">+</button>${data.stock}<button onClick="lessstock(${data.id})">-</button></td>
-            <td><button onCLick="del(${data.id})">borrar</button></td>
+            <td>$ ${compra.price}</td>
+            <td><button class="cart-button" onClick="morestock(${data.id})">+</button><span class="mlandr">${data.stock}</span> <button class="cart-button" onClick="lessstock(${data.id})">-</button></td>
+            <td><button class="cart-button del-button" onCLick="del(${data.id})">Borrar</button></td>
             <td id="price">1000</td>
         </tr>`
 
@@ -42,14 +39,13 @@ function render() {
     JSON.parse(localStorage.getItem('carrito')).forEach(data => {
         var compra = productos.find(productos => productos.id === data.id);
         content.innerHTML += `
-            <tr>
-            <td><img src="${compra.image}" alt="" id="imgcart">${compra.name}</td>
-            <td>${compra.description}</td>
-            <td>${compra.price}</td>
-            <td><button onClick="morestock(${data.id})">+</button>${data.stock}<button onClick="lessstock(${data.id})">-</button></td>
-            <td><button onCLick="del(${data.id})">borrar</button></td>
-            <td id="price">${compra.price*data.stock}</td>
-        </tr>`
+        <tr>
+        <td><img src="${compra.image}" alt="" id="imgcart">${compra.name}</td>
+        <td>$ ${compra.price}</td>
+        <td><button class="cart-button" onClick="morestock(${data.id})">+</button><span class="mlandr">${data.stock}</span> <button class="cart-button" onClick="lessstock(${data.id})">-</button></td>
+        <td><button class="cart-button del-button" onCLick="del(${data.id})">Borrar</button></td>
+        <td id="price">1000</td>
+    </tr>`
 
         totaladd += compra.price*data.stock
     })
@@ -61,7 +57,6 @@ function morestock(id) {
     let found = cart.find(x => x.id == id)
     const index = cart.indexOf(found)
     cart[index].stock += 1
-    console.log(cart)
     localStorage.setItem('carrito', JSON.stringify(cart))
     render()
 }
