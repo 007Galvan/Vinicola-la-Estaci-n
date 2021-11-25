@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     carrito = JSON.parse(localStorage.getItem('carrito'));
     productos = JSON.parse(localStorage.getItem('products'))
     if (productos == null) alert('No hay productos')
-    else if (carrito == null) alert('agrega productos al carrito')
+    else if (carrito == null) alert('No hay productos en tu carrito, agrega algunos')
     else getcart()
 
 })
