@@ -57,7 +57,7 @@ window.addEventListener('load', () => {
                 <td>${user.tel}</td>
                 <td>${user.email}</td>
                 <td>${atob(user.password)}</td>
-                <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
+                <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">Borrar</a></td>
                 </tr>`
     });
 
