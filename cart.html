@@ -15,19 +15,17 @@
 
 <body>
     <header>
-        <p class="brand-name">La Estación</p>
+        <a href="./index.html"><img src="img/La estacion.png" alt="" class="EstImg"></a>
         <nav>
-            <a href="">Administrador</a>
+            <a href="./products.html">Productos</a>
         </nav>
         <nav>
             <div class="dropdown">
                 <a href=""><img src="./img/icons/profile-user.png" width="30px" alt=""></a>
                 <div class="dropdown-content">
-                    <a href="./login.html">Iniciar sesión</a>
-                    <a href="./registro.html">Registrarse</a>
+                    <a href="./index.html" id="close">Cerrar sesión</a>
                 </div>
             </div>
-            <a href=""><img src="./img/icons/shopping-cart.png" width="30px" alt=""></a>
         </nav>
     </header>
 
@@ -41,28 +39,39 @@
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th></th>
+                            <!-- <th>Detalle</th> -->
                             <th>Precio</th>
-                            <th>cantidad</th>
+                            <th>Cantidad</th>
                             <th></th>
-                            <th>total</th>
+                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody id="salesIn" class="shopping">
                         
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <h4>Total: </h4>
+                            </td>
+                            <td id="total">$15,000</td>
+                        </tr>
+                    </tfoot>
                 </table>
-
+                
             </div>
 
             <!-- products -->
             <!-- totals -->
-            <div class="total">
+            <!-- <div class="total">
                 <div class="totals-item totals-item-total">
                     <label>Total</label>
-                    <div class="totals-value" id="total">90.57</div>
+                    <h2 class="totals-value" id="total">90.57</h2>
                 </div>
-            </div>
+            </div> -->
 
             <button class="checkout" id="check">Checkout</button>
             <div class="clearfix"></div>

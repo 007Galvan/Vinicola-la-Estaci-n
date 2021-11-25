@@ -18,63 +18,62 @@
             <p class="brand-name">La Estación</p>
         </a>
         <nav>
-            <a href="">Administrador</a>
+            <a href="#">Administrador</a>
         </nav>
         <nav>
             <div class="dropdown">
                 <a href=""><img src="./img/icons/profile-user.png" width="30px" alt=""></a>
                 <div class="dropdown-content">
-                    <a href="./login.html">Iniciar sesión</a>
-                    <a href="./registro.html">Registrarse</a>
+                    <a href="./index.html" id="close">Cerrar sesión</a>
                 </div>
             </div>
-            <a href=""><img src="./img/icons/shopping-cart.png" width="30px" alt=""></a>
         </nav>
     </header>
 
     <!-- panel  -->
-    
+
 
 
     <div class="content">
         <h2>Panel de administración</h2>
-        <div class="" >
+        <div class="">
             <form action="javascript:void(0);" class="formRegistro" id="formulario">
-                <button class="quitarFormulario"  onclick="quitarFormulario()" >&times;</button>
+                <button class="quitarFormulario" onclick="quitarFormulario()">&times;</button>
                 <div class="form-group">
-                <p>Nombre del Producto</p>
-                <input class="form-control" type="text" id="nombre" style="border-color: mediumpurple;">
-                </div>
-                 <div class="form-group">
-                <p>Stock</p>
-                <input class="form-control" type="number" id="stock" style="border-color: mediumpurple;">
-                 </div>
-                 <div class="form-group">
-                <p>Detalle</p>
-                <input class="form-control" type="text" id="detalle" style="border-color: mediumpurple;">
+                    <p>Nombre del Producto</p>
+                    <input class="form-control" type="text" id="nombre" style="border-color: mediumpurple;">
                 </div>
                 <div class="form-group">
-                <p>Precio</p>
-                <input class="form-control" type="number" id="precio" style="border-color: mediumpurple;">
-                <div class="form-group">
-                <p>Imagen del producto</p>
-                <input class="form-control"type="file" name="archivosubido" id="imagen" onchange="obtImg()" style="border-color: mediumpurple;">
+                    <p>Stock</p>
+                    <input class="form-control" type="number" id="stock" style="border-color: mediumpurple;">
                 </div>
-                <br>
-                <button class="add-to-cart" type="submit" onclick="agregarProducto()"><b>Registrar</b></button>
+                <div class="form-group">
+                    <p>Detalle</p>
+                    <input class="form-control" type="text" id="detalle" style="border-color: mediumpurple;">
+                </div>
+                <div class="form-group">
+                    <p>Precio</p>
+                    <input class="form-control" type="number" id="precio" style="border-color: mediumpurple;">
+                    <div class="form-group">
+                        <p>Imagen del producto</p>
+                        <input class="form-control" type="file" name="archivosubido" id="imagen" onchange="obtImg()"
+                            style="border-color: mediumpurple;">
+                    </div>
+                    <br>
+                    <button class="add-to-cart" type="submit" onclick="agregarProducto()"><b>Registrar</b></button>
             </form>
         </div>
 
-       
+
         <div id="box">
-        <!-- cards  -->
+            <!-- cards  -->
             <div class="box-top">
                 <p>Productos</p>
                 <button class="button-add" onclick="mostrarFormulario()"><b>Agregar Producto</b></button>
             </div>
 
-          
-           
+
+
             <div class="box-panel" id="products">
                 <!-- cards -->
             </div>
@@ -98,7 +97,7 @@
                         </tr>
                     </thead>
                     <tbody id="usersIn">
-                        
+
 
                     </tbody>
                 </table>
@@ -120,16 +119,6 @@
                         </tr>
                     </thead>
                     <tbody id="salesIn">
-                        <tr>
-                            <td>Alejandro Orbe</td>
-                            <td>mezcal aleron</td>
-                            <td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>Alejandro Orbe</td>
-                            <td>don julio</td>
-                            <td>500</td>
-                        </tr>
 
                     </tbody>
                 </table>
@@ -143,8 +132,8 @@
     </div>
     <!-- panel -->
 
-   
-<script src="js/panel.js"></script>
+
+    <script src="js/panel.js"></script>
 </body>
 
 </html>

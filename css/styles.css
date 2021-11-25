@@ -440,3 +440,18 @@ thead th {
 }
 /*Nosotros*/
 
+<<<<<<< HEAD
+=======
+ #h3{
+    color: var(--text-color);
+    font-family: cursive;
+}
+.imgNosotros{
+    height: 0%;
+}
+
+.EstImg{
+    width: 110px;
+    height: 80px;
+}
+>>>>>>> b131813d8b82586cd704249c6e7b7ca35d91af9b

@@ -9,11 +9,17 @@ var productos = [];
 var usuarios = [];
 var products = document.getElementById('products')
 var users = document.getElementById('usersIn')
-var sales = document.querySelector('salesIn')
+var sales = document.getElementById('salesIn')
+var sell = []
+var compras
+
 window.addEventListener('load', () => {
 
     productos = JSON.parse(localStorage.getItem('products'));
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
+    sell = JSON.parse(localStorage.getItem('sells'));
+
+    //console.log(sell);
 
     if (productos.length == 0) {
         productos = [];
@@ -23,10 +29,15 @@ window.addEventListener('load', () => {
     }
     if (usuarios == null) {
         usuarios = [];
-        users = "No hay usuarios"
+        users.innerHTML = "No hay usuarios"
     }
-            productos.forEach(info => {
-                products.innerHTML += `
+    if (sell == null) {
+        sell = [];
+        users.innerHTML = "No hay ventas"
+    }
+
+    productos.forEach(info => {
+        products.innerHTML += `
             <div class="image-block" id="card">
             <img src="${info.image}" alt="" />
             <div id="botton">
@@ -36,19 +47,31 @@ window.addEventListener('load', () => {
                 <h3>Stock ${info.stock}</h3>
                 <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
             </div>
-            </div>`})
-        
+            </div>`
+    })
 
     usuarios.slice(1).forEach(user => {
         users.innerHTML += `
-        <tr>
-        <td>${user.name + " " + user.lastName}</td>
-        <td>${user.phone}</td>
-        <td>${user.email}</td>
-        <td>${atob(user.password)}</td>
-        <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
-        </tr>`
+                <tr>
+                <td>${user.name + " " + user.lastName}</td>
+                <td>${user.tel}</td>
+                <td>${user.email}</td>
+                <td>${atob(user.password)}</td>
+                <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
+                </tr>`
     });
+
+
+    sell.forEach(orders => {
+        sales.innerHTML += `
+        <tr>
+        <td>${orders.user}</td>
+        <td>${displaysells(orders.prodcutos)}</td>
+        <td>${orders.total}</td>
+        </tr>`
+    })
+
+
 
 })
 
@@ -77,7 +100,7 @@ const renderUsers = () => {
         users.innerHTML += `
         <tr>
         <td>${user.name + " " + user.lastName}</td>
-        <td>${user.phone}</td>
+        <td>${user.tel}</td>
         <td>${user.email}</td>
         <td>${atob(user.password)}</td>
         <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
@@ -167,4 +190,18 @@ function removeUser(mail) {
     localStorage.setItem("usuarios", JSON.stringify(usersLS));
 
     renderUsers();
+}
+
+//sells
+function displaysells(orders) {
+    let ids = orders.map(x => x.id)
+    console.log(orders);
+
+    let name = ''
+    for (let i = 0; i < ids.length; i++) {
+        compra = productos.filter(productos => productos.id === ids[i]);
+        name += compra[0].name +" cantidad "+ orders[i].stock + "<br>";
+    }
+   
+   return name
 }

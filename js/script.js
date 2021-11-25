@@ -26,8 +26,13 @@ const login = () => {
         if (parsedUsers.some(x => x.email === email.value)) {
             let found = parsedUsers.filter(x => x.email === email.value);
             if (password.value === atob(found[0].password)) {
+
+                sessionStorage.setItem("logged", JSON.stringify(email.value));
                 location.href = "./products.html";
                 alert("Acceso correcto");
+                
+                
+
             } else {
                 alert("Contraseña incorrecta"); 
                 password.value = "";
