@@ -11,15 +11,14 @@ function mostrarDatos() {
         <p>$${info.price}</p>
         <button class="add-to-cart" id="buy" onClick="buy(${info.id}) " >Agregar al carrito</button>
     </div>`
-        console.log(info.id)
     })
 
 }
 
 window.addEventListener('load', () => {
-    user.innerHTML = UsName()
-        let productosLS = JSON.parse(localStorage.getItem('products'))
+    let productosLS = JSON.parse(localStorage.getItem('products'))
     let carritoLS = JSON.parse(localStorage.getItem('carrito'));
+    user.innerHTML = UsName()
 
     if (productosLS == null) {
         alert('No hay productos que mostrar')
@@ -76,6 +75,8 @@ close.addEventListener('click', () => {
 
 function UsName(){
     let username
-    username = sessionStorage.getItem('logged')
-    return username
+    users = JSON.parse(localStorage.getItem('usuarios'))
+    names = JSON.parse(sessionStorage.getItem('logged'))
+    username = users.find(users => users.email === names);
+    return username.name
 }

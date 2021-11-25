@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
         users.innerHTML += `
                 <tr>
                 <td>${user.name + " " + user.lastName}</td>
-                <td>${user.phone}</td>
+                <td>${user.tel}</td>
                 <td>${user.email}</td>
                 <td>${atob(user.password)}</td>
                 <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
@@ -100,7 +100,7 @@ const renderUsers = () => {
         users.innerHTML += `
         <tr>
         <td>${user.name + " " + user.lastName}</td>
-        <td>${user.phone}</td>
+        <td>${user.tel}</td>
         <td>${user.email}</td>
         <td>${atob(user.password)}</td>
         <td class="delete"><a onclick='return removeUser("${user.email}")' class="button">borrar</a></td>
