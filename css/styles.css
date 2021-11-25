@@ -438,3 +438,9 @@ thead th {
 #sales thead th:nth-child(1) {
     width: 15%;
 }
+.EstImg {
+    width: 40px;
+}
+body {
+    padding-top: 5px;
+}

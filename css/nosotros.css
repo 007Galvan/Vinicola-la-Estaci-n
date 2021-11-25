@@ -3,7 +3,7 @@ header {
     display         : flex;
     justify-content : space-between;
     align-items     : center;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
     font-weight     : bold;
     padding-left    : 50px;
     padding-right   : 50px;
@@ -236,3 +236,12 @@ height: 75%;
   .social-button--instagram::after {
     background: #c13584;
   }
+body {
+  padding: 0;
+}
+.EstImg {
+  width: 40px;
+}
+body {
+  padding-top: 5px;
+}

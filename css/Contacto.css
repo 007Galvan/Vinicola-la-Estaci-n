@@ -438,3 +438,6 @@ textarea.input1 + .shadow-input1 {
 .brand-name{
   color: #000;
 }
+body {
+  padding: 0;
+}
