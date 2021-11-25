@@ -81,7 +81,7 @@ let products = [
     },
     {
         "id": 11,
-        "name": "VINO BLANCO VIÑAS DEL VERO LUCES CHARDONNAY 750 ML",
+        "name": "VINO BLANCO VIÑAS CHARDONNAY 750 ML",
         "price": 1000,
         "stock": 10,
         "description": "Ideal para acompañar entradas, tiene aromas con recuerdos frutales a albaricoque, melocotón, manzana, lima y vegetales, y un sabor agradable de paso muy limpio.",
