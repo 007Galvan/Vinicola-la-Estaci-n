@@ -1,5 +1,6 @@
 var cuerpo = document.querySelector('.cards')
 var productos = [];
+var user = document.getElementById("name")
 
 function mostrarDatos() {
     JSON.parse(localStorage.getItem("products")).forEach(info => {
@@ -16,8 +17,8 @@ function mostrarDatos() {
 }
 
 window.addEventListener('load', () => {
-
-    let productosLS = JSON.parse(localStorage.getItem('products'))
+    user.innerHTML = UsName()
+        let productosLS = JSON.parse(localStorage.getItem('products'))
     let carritoLS = JSON.parse(localStorage.getItem('carrito'));
 
     if (productosLS == null) {
@@ -31,7 +32,7 @@ window.addEventListener('load', () => {
         carrito = [];
     }
 })
-if(localStorage.getItem('carrito') == null) {
+if (localStorage.getItem('carrito') == null) {
     localStorage.setItem('carrito', '[]')
 }
 // prueba compra carrito
@@ -44,15 +45,15 @@ function buy(producto) {
 
     let carritols = JSON.parse(localStorage.getItem('carrito'))
     let founded = carritols.find(x => x.id == cart.id)
-console.log(founded);
+    console.log(founded);
     if (founded == null) {
         carritols.push(cart);
         localStorage.setItem('carrito', JSON.stringify(carritols))
-    }else{
+    } else {
         // carritols = JSON.parse(localStorage.getItem('carrito'))
         // const index = carritols.indexOf(founded);
         // console.log(index);
-        
+
         // if (index > - 1) {
         //     console.log(index);
 
@@ -64,4 +65,17 @@ console.log(founded);
         // localStorage.setItem('carrito', JSON.stringify(carritols))
         alert('el producto ya se encuentra en el carrito')
     }
+}
+
+
+/*cerrar sesion */
+var close = document.getElementById('close')
+close.addEventListener('click', () => {
+    sessionStorage.removeItem("logged")
+})
+
+function UsName(){
+    let username
+    username = sessionStorage.getItem('logged')
+    return username
 }
