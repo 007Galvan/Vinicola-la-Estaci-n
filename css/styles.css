@@ -156,6 +156,7 @@ h1,
 .add-to-cart {
     background-color: var(--main-bg-color);
     padding         : 10px 30px;
+    border: none;
     border-radius   : 50px;
     text-decoration : none;
     color           : #fff;
