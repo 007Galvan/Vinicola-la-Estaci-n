@@ -161,12 +161,19 @@ h1,
     text-decoration : none;
     color           : #fff;
 }
+.add-to-cart:hover {
+    opacity: 0.8;
+}
 .button-add {
-    background-color: var(--main-bg-color);
+    background-color: rgb(26, 188, 156);
     padding         : 10px 30px;
+    border: none;
     border-radius   : 50px;
     text-decoration : none;
     color           : #fff;
+}
+.button-add:hover {
+    opacity: 0.8;
 }
 
 /* Dropdown */

@@ -78,5 +78,5 @@ function UsName(){
     users = JSON.parse(localStorage.getItem('usuarios'))
     names = JSON.parse(sessionStorage.getItem('logged'))
     username = users.find(users => users.email === names);
-    return username.name
+    return `: ${username.name}`
 }
