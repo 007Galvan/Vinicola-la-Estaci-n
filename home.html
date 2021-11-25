@@ -10,16 +10,29 @@
     <title>La Estación</title>
 </head>
 <body>
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Inicio</a>
-        <a href="./home.html">Regresar</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
+  <h1 class="text-center ">Bienvenido</h1>
+  
+  <div class="card">
+    <div class="card-body">
+      <img src="img/logoVinicola.png" alt="LaEstacion">
+      <h5 class="card-title">En este sitio encontrarás lo mejor en Whisky, Tequila, Vinos y Licores. </h5>
+      <p class="card-text" >Estamosm compremetidos con el consumo responsable de alcohol por eso te pedimos
+        contestar con responsabilidad.<br>
+        Porfavor verifica tu edad
+      </p>
+      <div id="card-text"></div>
+      <input type="checkbox" id="mayor">Soy mayor de 18 años<br>
+      <input type="checkbox" id="menor">Recuérdame<br>
+      
+      <button onclick="entrar()">Entrar al Sitio</button>
+    </div>
+  </div>
 
-    <h1 class="text-center my-5">Bienvenido</h1>
+  </div>
+  
 
-    <script src="./js/navbar.js"></script>
+  
+
+    <script src="js/home.js"></script>
 </body>
 </html>
