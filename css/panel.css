@@ -1,0 +1,48 @@
+body {
+    background-color: #fff;
+}
+table {
+    font-size: initial;
+}
+td {
+    border: 0px solid white;
+}
+th {
+    text-align: center;
+}
+#imgcart{
+    width: 120px;
+}
+.mlandr {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.box-panel {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.cart-button {
+    padding         : 8px 18px;
+    background-color: #2052D5;
+    border          : none;
+    border-radius   : 5px;
+    color           : white;
+}
+.cart-button:hover {
+    opacity: 0.7;
+}
+.del-button {
+    background-color: #1abc9c;
+}
+table th:first-child{
+    border-radius: 10px 0 0 10px;
+  }
+  
+table th:last-child{
+    border-radius:0 10px 10px 0;
+}
+body {
+    padding: 0;
+}
+.mbottom {
+    margin-bottom: 40px;
+}

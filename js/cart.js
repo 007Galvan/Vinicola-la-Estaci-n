@@ -66,7 +66,7 @@ function morestock(id, stock) {
         localStorage.setItem('carrito', JSON.stringify(cart))
         render()
     } else {
-        alert('maximo stock disponible')
+        alert('Máximo stock disponible')
     }
 }
 function lessstock(id) {
@@ -79,7 +79,7 @@ function lessstock(id) {
         localStorage.setItem('carrito', JSON.stringify(cart))
         render()
     } else {
-        alert('si quieres eliminar el proucto usa el boton "Eliminar"')
+        alert('Si quieres eliminar el proucto usa el boton "Eliminar"')
     }
 
 }
@@ -104,5 +104,6 @@ out.addEventListener('click', () => {
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.removeItem('carrito')
+    location.reload()
 })
 
