@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
             <img src="${info.image}" alt="" />
             <div id="botton">
             <p>ID: ${info.id}</p>
-            <h3>${info.name}</h3>
+            <h4>${info.name}</h4>
             <h3>$ ${info.price}</h3>
                 <h3>Stock ${info.stock}</h3>
                 <button id="${info.id}" onclick="removeProduct(${info.id})">Eliminar</button>
