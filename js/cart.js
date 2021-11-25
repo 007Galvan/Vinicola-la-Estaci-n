@@ -104,5 +104,6 @@ out.addEventListener('click', () => {
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.removeItem('carrito')
+    location.reload()
 })
 
