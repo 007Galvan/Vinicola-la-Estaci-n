@@ -156,6 +156,10 @@ function mostrarFormulario() {
     formulario.classList.add('z-index')
 
 }
+function mostrarFormularioUsuario(){
+ location.replace('registro.html')
+
+}
 function quitarFormulario() {
     formulario.style.display = 'none';
 
