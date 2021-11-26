@@ -1,6 +1,7 @@
 :root {
     --main-bg-color: #802bd6;
     --text-color: #0a0a0a;
+    --main2-bg-color: rgba(37, 214, 161, 0.89);
 }
 body {
     background-color: var(--main-bg-color);
@@ -60,27 +61,28 @@ a {
 }
 /*home.html*/
 .card {
+    background-color: rgb(166, 92, 209);
     margin-left: auto;
     margin-right: auto;
     padding      : 10px;
-    width: 50%;
-    height       : 50%;
+    width: 40%;
+    height       : 40%;
     border-radius: 20px;
     text-align   : center;
     box-shadow: rgba(0, 0, 0, 0.35) 20px 20px 20px 20px;
 }
 .card-body{
-    color: rgb(110, 57, 57);
+    color: #fff;
     text-align: center;
 }
 .card-body img{
     width: 50%;
     height: 50%;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 button{
-    background-color: var(--main-bg-color);
+    background-color: var(--main2-bg-color);
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
@@ -93,5 +95,11 @@ button{
 
     border-style: solid;
     border-color: firebrick;
-    background-color:gray
+    background-color:gray;
+    color: #fff;
+}
+#bodyHome{
+    color: #000;
+    background-image: url(../img/home2.jpg);
+    
 }
