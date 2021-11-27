@@ -98,6 +98,10 @@ let products = [
 ];
 
 window.addEventListener('load', () => {
-    localStorage.setItem("products", JSON.stringify(products));
-    console.log("Productos cargados en localStorage");
+    if(!localStorage.getItem("products")) {
+        localStorage.setItem("products", JSON.stringify(products));
+        console.log("Productos cargados en localStorage");
+    } else {
+        console.log("Ya existen productos en localStorage");
+    }
 });
