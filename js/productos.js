@@ -2,6 +2,11 @@ var cuerpo = document.querySelector('.cards')
 var productos = [];
 var user = document.getElementById("name")
 
+document.getElementById("xyz").innerHTML = `
+        <img src="./img/icons/shopping-cart.png" width="30px" alt="">
+                <span class="span"> ${JSON.parse(localStorage.getItem("carrito")).length} </span>
+        `;
+
 function mostrarDatos() {
     JSON.parse(localStorage.getItem("products")).forEach(info => {
 
@@ -12,7 +17,6 @@ function mostrarDatos() {
         <button class="add-to-cart" id="buy" onClick="buy(${info.id}) " >Agregar al carrito</button>
     </div>`
     })
-
 }
 
 window.addEventListener('load', () => {
@@ -36,7 +40,6 @@ if (localStorage.getItem('carrito') == null) {
 }
 // prueba compra carrito
 function buy(producto) {
-    console.log('se agrego el producto ' + producto);
     var cart = {
         id: producto,
         stock: 1
@@ -44,25 +47,15 @@ function buy(producto) {
 
     let carritols = JSON.parse(localStorage.getItem('carrito'))
     let founded = carritols.find(x => x.id == cart.id)
-    console.log(founded);
     if (founded == null) {
         carritols.push(cart);
         localStorage.setItem('carrito', JSON.stringify(carritols))
+        document.getElementById("xyz").innerHTML = `
+        <img src="./img/icons/shopping-cart.png" width="30px" alt="">
+                <span class="span"> ${JSON.parse(localStorage.getItem("carrito")).length} </span>
+        `;
     } else {
-        // carritols = JSON.parse(localStorage.getItem('carrito'))
-        // const index = carritols.indexOf(founded);
-        // console.log(index);
-
-        // if (index > - 1) {
-        //     console.log(index);
-
-        //     carritols.splice(index, 1);
-        // }
-        // // carritols[index].stock++
-        // cart.stock++
-        // carritols.push(cart);
-        // localStorage.setItem('carrito', JSON.stringify(carritols))
-        alert('el producto ya se encuentra en el carrito')
+        alert('El producto ya está en el carrito, añade más desde ahí');
     }
 }
 
