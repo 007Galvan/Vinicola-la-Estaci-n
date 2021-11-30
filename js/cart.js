@@ -2,9 +2,9 @@ var total = document.getElementById("total")
 var content = document.querySelector('.shopping')
 var carrito = []
 var productos = [];
-var totaladd = 0
+var totaladd = 0;
 var out = document.querySelector('#check')
-var compra
+var compra;
 
 var moreless = document.querySelector('#buy')
 var tobuy = 0

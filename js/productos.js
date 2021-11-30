@@ -2,7 +2,9 @@ var cuerpo = document.querySelector('.cards')
 var productos = [];
 var user = document.getElementById("name")
 
-
+if (!localStorage.getItem("carrosGuardados")) {
+    localStorage.setItem("carrosGuardados", "[]");
+}
 
 function mostrarDatos() {
     JSON.parse(localStorage.getItem("products")).forEach(info => {
@@ -68,9 +70,22 @@ function buy(producto) {
 
 /*cerrar sesion */
 var close = document.getElementById('close')
-close.addEventListener('click', () => {
-    sessionStorage.removeItem("logged")
+    close.addEventListener('click', () => {
+
+    sessionStorage.removeItem("logged");
 })
+
+const guardarCarros = () => {
+    let comprador = JSON.parse(sessionStorage.getItem("logged"));
+    let carritoUser = {
+        comprador: comprador,
+        productos: JSON.parse(localStorage.getItem("carrito"))
+    }
+    let copiaCarrito = [];
+    copiaCarrito.push(carritoUser)
+    console.log(copiaCarrito);
+    localStorage.setItem("carrosGuardados", JSON.stringify(copiaCarrito))
+}
 
 function UsName(){
     let username
