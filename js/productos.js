@@ -20,6 +20,20 @@ function mostrarDatos() {
 
 window.addEventListener('load', () => {
 
+    var userL=JSON.parse(localStorage.getItem('carrosGuardados'))
+    var usuarioA=JSON.parse(sessionStorage.getItem('logged'))
+
+    let encontrado = userL.find(x => x.comprador == usuarioA);
+    let indice = userL.indexOf(encontrado);
+
+   if (encontrado){
+       localStorage.setItem('carrito', JSON.stringify(userL[indice].productos))
+       console.log(userL)
+   } else {
+       console.log("no se encontró");
+   }
+    
+
     if (localStorage.getItem('carrito') == null) {
         localStorage.setItem('carrito', '[]')
         console.log('No existe')
@@ -71,20 +85,31 @@ function buy(producto) {
 /*cerrar sesion */
 var close = document.getElementById('close')
     close.addEventListener('click', () => {
-
+    localStorage.setItem("carrito", "[]");
     sessionStorage.removeItem("logged");
 })
 
 const guardarCarros = () => {
+    let carrosGuardados=JSON.parse(localStorage.getItem('carrosGuardados'))
     let comprador = JSON.parse(sessionStorage.getItem("logged"));
     let carritoUser = {
         comprador: comprador,
         productos: JSON.parse(localStorage.getItem("carrito"))
     }
-    let copiaCarrito = [];
-    copiaCarrito.push(carritoUser)
-    console.log(copiaCarrito);
-    localStorage.setItem("carrosGuardados", JSON.stringify(copiaCarrito))
+    
+    var valueArr = carrosGuardados.map(function(item){ return item.name });
+    var isDuplicate = valueArr.some(function(item, idx){ 
+        return valueArr.indexOf(item) != idx 
+    });
+
+    if ( ! isDuplicate ) {
+        carrosGuardados.push(carritoUser)
+    } else {
+        console.log("duplicado");
+    }
+    
+    console.log(carrosGuardados);
+    localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
 }
 
 function UsName(){
