@@ -2,10 +2,7 @@ var cuerpo = document.querySelector('.cards')
 var productos = [];
 var user = document.getElementById("name")
 
-document.getElementById("xyz").innerHTML = `
-        <img src="./img/icons/shopping-cart.png" width="30px" alt="">
-                <span class="span"> ${JSON.parse(localStorage.getItem("carrito")).length} </span>
-        `;
+
 
 function mostrarDatos() {
     JSON.parse(localStorage.getItem("products")).forEach(info => {
@@ -21,7 +18,12 @@ function mostrarDatos() {
 
 window.addEventListener('load', () => {
 
+    if (localStorage.getItem('carrito') == null) {
+        localStorage.setItem('carrito', '[]')
+        console.log('No existe')
+    }
 
+    
     let productosLS = JSON.parse(localStorage.getItem('products'))
     let carritoLS = JSON.parse(localStorage.getItem('carrito'));
     user.innerHTML = UsName()
@@ -36,10 +38,12 @@ window.addEventListener('load', () => {
     if (carritoLS == null) {
         carrito = [];
     }
+    document.getElementById("xyz").innerHTML = `
+        <img src="./img/icons/shopping-cart.png" width="30px" alt="">
+                <span class="span"> ${JSON.parse(localStorage.getItem("carrito")).length} </span>
+        `;
 })
-if (localStorage.getItem('carrito') == null) {
-    localStorage.setItem('carrito', '[]')
-}
+
 // prueba compra carrito
 function buy(producto) {
     var cart = {

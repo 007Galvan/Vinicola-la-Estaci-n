@@ -10,7 +10,7 @@ var productos = [];
 var usuarios = [];
 var products = document.getElementById('products')
 var users = document.getElementById('usersIn')
-var sales = document.getElementById('salesIn')
+var sales = document.querySelector('#salesIn')
 var sell = []
 var compras
 
@@ -199,14 +199,15 @@ function removeUser(mail) {
 }
 
 //sells
-function displaysells(orders) {
-    let ids = orders.map(x => x.id)
-    console.log(orders);
+var Sells=JSON.parse(localStorage.getItem('sells'))
+function displaysells(Sells) {
+    let ids = Sells.map(x => x.id)
+    console.log(Sells);
 
     let name = ''
     for (let i = 0; i < ids.length; i++) {
         compra = productos.filter(productos => productos.id === ids[i]);
-        name += compra[0].name +" cantidad "+ orders[i].stock + "<br>";
+        name += compra[0].name +" cantidad "+ Sells[i].stock + "<br>";
     }
    
    return name
