@@ -95,10 +95,17 @@ if(localStorage.getItem('sells') == null) {
     localStorage.setItem('sells', '[]')
 }
 out.addEventListener('click', () => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + ' / ' + dd + ' / ' + yyyy;
+
     let sells= JSON.parse(localStorage.getItem('sells'))
     let venta = {
         user: JSON.parse(sessionStorage.getItem("logged")),
         prodcutos: JSON.parse(localStorage.getItem('carrito')),
+        date: today,
         total:totaladd
     }
     sells.push(venta)

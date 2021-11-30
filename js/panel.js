@@ -62,19 +62,19 @@ window.addEventListener('load', () => {
                 </tr>`
     });
 
-
+/*
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
-    today = mm + ' / ' + dd + ' / ' + yyyy;
+    today = mm + ' / ' + dd + ' / ' + yyyy; */
 
     sell.forEach(orders => {
         sales.innerHTML += `
         <tr>
         <td>${orders.user}</td>
         <td>${displaysells(orders.prodcutos)}</td>
-        <td>${today}</td>
+        <td>${orders.date}</td>
         <td>${orders.total}</td>
         </tr>`
     })
