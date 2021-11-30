@@ -20,6 +20,8 @@ function mostrarDatos() {
 }
 
 window.addEventListener('load', () => {
+
+
     let productosLS = JSON.parse(localStorage.getItem('products'))
     let carritoLS = JSON.parse(localStorage.getItem('carrito'));
     user.innerHTML = UsName()

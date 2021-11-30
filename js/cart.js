@@ -103,7 +103,7 @@ out.addEventListener('click', () => {
     }
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
-    localStorage.removeItem('carrito')
+    localStorage.setItem('carrito', '[]')
     location.reload()
 })
 
