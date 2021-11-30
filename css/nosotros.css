@@ -136,6 +136,7 @@ height: 75%;
 .dropdown:hover .dropdown-content {
     display      : block;
     border-radius: 15px;
+    right: 1px;
   }
   .dropdown:hover .dropbtn {
     background-color: var(--main-bg-color);

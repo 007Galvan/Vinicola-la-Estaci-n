@@ -4,6 +4,7 @@ var stockP = document.getElementById('stock');
 var detalleP = document.getElementById('detalle');
 var imagen = document.getElementById('imagen');
 var formulario = document.querySelector('#formulario');
+var contenido = document.querySelector('#content');
 
 var productos = [];
 var usuarios = [];
@@ -154,6 +155,7 @@ function mostrarFormulario() {
 
     formulario.style.display = 'block'
     formulario.classList.add('z-index')
+    contenido.style.opacity = '50%'
 
 }
 function mostrarFormularioUsuario(){
@@ -162,7 +164,7 @@ function mostrarFormularioUsuario(){
 }
 function quitarFormulario() {
     formulario.style.display = 'none';
-
+    contenido.style.opacity = '100%'
 }
 
 //products
