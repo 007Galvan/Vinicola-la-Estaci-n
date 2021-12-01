@@ -113,4 +113,34 @@ out.addEventListener('click', () => {
     localStorage.setItem('carrito', '[]')
     location.reload()
 })
+/*cerrar sesion */
+var close = document.getElementById('close')
+    close.addEventListener('click', () => {
+    localStorage.setItem("carrito", "[]");
+    sessionStorage.removeItem("logged"); 
 
+})
+const guardarCarros = () => {
+    let carrosGuardados=JSON.parse(localStorage.getItem('carrosGuardados'))
+    let comprador = JSON.parse(sessionStorage.getItem("logged"));
+    let carritoUser = {
+        comprador: comprador,
+        productos: JSON.parse(localStorage.getItem("carrito"))
+    }
+
+    if ( carrosGuardados.some(element => element.comprador === comprador )) {
+        let cartLS = JSON.parse(localStorage.getItem("carrito"));
+        let carritoUser = {
+            comprador: comprador,
+            productos: [...cartLS]
+        }
+        let found = carrosGuardados.find(x => x.comprador == comprador)
+        const index = carrosGuardados.indexOf(found)
+        if (index > - 1) carrosGuardados.splice(index, 1)
+        carrosGuardados.push(carritoUser);
+        localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
+    } else {
+        carrosGuardados.push(carritoUser)
+        localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
+    }
+}
