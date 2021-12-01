@@ -96,20 +96,22 @@ const guardarCarros = () => {
         comprador: comprador,
         productos: JSON.parse(localStorage.getItem("carrito"))
     }
-    
-    var valueArr = carrosGuardados.map(function(item){ return item.name });
-    var isDuplicate = valueArr.some(function(item, idx){ 
-        return valueArr.indexOf(item) != idx 
-    });
 
-    if ( ! isDuplicate ) {
-        carrosGuardados.push(carritoUser)
+    if ( carrosGuardados.some(element => element.comprador === comprador )) {
+        let cartLS = JSON.parse(localStorage.getItem("carrito"));
+        let carritoUser = {
+            comprador: comprador,
+            productos: [...cartLS]
+        }
+        let found = carrosGuardados.find(x => x.comprador == comprador)
+        const index = carrosGuardados.indexOf(found)
+        if (index > - 1) carrosGuardados.splice(index, 1)
+        carrosGuardados.push(carritoUser);
+        localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
     } else {
-        console.log("duplicado");
+        carrosGuardados.push(carritoUser)
+        localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
     }
-    
-    console.log(carrosGuardados);
-    localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
 }
 
 function UsName(){
