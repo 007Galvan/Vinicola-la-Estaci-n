@@ -26,7 +26,7 @@ function getcart() {
             <td>$ ${compra.price}</td>
             <td><button class="cart-button" onClick="morestock(${data.id},${compra.stock})">+</button><span class="mlandr">${data.stock}</span> <button class="cart-button" onClick="lessstock(${data.id})">-</button></td>
             <td><button class="cart-button del-button" onCLick="del(${data.id})">Borrar</button></td>
-            <td id="price">1000</td>
+            <td id="price">${prices(compra, data)}</td>
         </tr>`
 
         totaladd += compra.price
@@ -46,15 +46,17 @@ function render() {
         <td>$ ${compra.price}</td>
         <td><button class="cart-button" onClick="morestock(${data.id},${compra.stock})">+</button><span class="mlandr">${data.stock}</span> <button class="cart-button" onClick="lessstock(${data.id})">-</button></td>
         <td><button class="cart-button del-button" onCLick="del(${data.id})">Borrar</button></td>
-        <td id="price">1000</td>
+        <td id="price">${prices(compra, data)}</td>
     </tr>`
-
         totaladd += compra.price * data.stock
     })
     total.innerHTML = totaladd
 }
 
-
+function prices(compra, data) {
+ var cant= data.stock * compra.price 
+    return cant
+}
 function morestock(id, stock) {
     let cart = JSON.parse(localStorage.getItem('carrito'));
     let found = cart.find(x => x.id == id)
@@ -91,7 +93,7 @@ function del(id) {
     localStorage.setItem('carrito', JSON.stringify(delet))
     render()
 }
-if(localStorage.getItem('sells') == null) {
+if (localStorage.getItem('sells') == null) {
     localStorage.setItem('sells', '[]')
 }
 out.addEventListener('click', () => {
@@ -101,12 +103,12 @@ out.addEventListener('click', () => {
     var yyyy = today.getFullYear();
     today = mm + ' / ' + dd + ' / ' + yyyy;
 
-    let sells= JSON.parse(localStorage.getItem('sells'))
+    let sells = JSON.parse(localStorage.getItem('sells'))
     let venta = {
         user: JSON.parse(sessionStorage.getItem("logged")),
         prodcutos: JSON.parse(localStorage.getItem('carrito')),
         date: today,
-        total:totaladd
+        total: totaladd
     }
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
@@ -115,20 +117,20 @@ out.addEventListener('click', () => {
 })
 /*cerrar sesion */
 var close = document.getElementById('close')
-    close.addEventListener('click', () => {
+close.addEventListener('click', () => {
     localStorage.setItem("carrito", "[]");
-    sessionStorage.removeItem("logged"); 
+    sessionStorage.removeItem("logged");
 
 })
 const guardarCarros = () => {
-    let carrosGuardados=JSON.parse(localStorage.getItem('carrosGuardados'))
+    let carrosGuardados = JSON.parse(localStorage.getItem('carrosGuardados'))
     let comprador = JSON.parse(sessionStorage.getItem("logged"));
     let carritoUser = {
         comprador: comprador,
         productos: JSON.parse(localStorage.getItem("carrito"))
     }
 
-    if ( carrosGuardados.some(element => element.comprador === comprador )) {
+    if (carrosGuardados.some(element => element.comprador === comprador)) {
         let cartLS = JSON.parse(localStorage.getItem("carrito"));
         let carritoUser = {
             comprador: comprador,
