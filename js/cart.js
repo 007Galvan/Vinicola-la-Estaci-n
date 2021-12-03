@@ -167,7 +167,7 @@ function delstock() {
         let found = update.find(x => x.id == nwstock.id)
         const index = update.indexOf(found)
         if (index > - 1) update.splice(index, 1)
-        
+        update.push(nwstock)
         
         localStorage.setItem('carrito', JSON.stringify(update))
         localStorage.setItem('products', nwstock)
