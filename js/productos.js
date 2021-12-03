@@ -7,9 +7,9 @@ if (!localStorage.getItem("carrosGuardados")) {
 }
 
 function mostrarDatos() {
-    JSON.parse(localStorage.getItem("products")).forEach(info => {
+    JSON.parse(localStorage.getItem("products")).slice().reverse().forEach(info => {
 
-        cuerpo.innerHTML += `<div class="card">
+        cuerpo.innerHTML += `<div class="card animals">
         <img class="card-img" src="${info.image}" alt="" >
         <p>${info.name}</p>
         <p>$${info.price}</p>
