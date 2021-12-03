@@ -62,12 +62,12 @@ window.addEventListener('load', () => {
                 </tr>`
     });
 
-/*
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + ' / ' + dd + ' / ' + yyyy; */
+    /*
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = mm + ' / ' + dd + ' / ' + yyyy; */
 
     sell.forEach(orders => {
         sales.innerHTML += `
@@ -131,20 +131,20 @@ function agregarProducto() {
 
     var objeto = {
         id: GetId(),
-        nombre: nombreP.value,
-        precio: precioP.value,
+        name: nombreP.value,
+        price: precioP.value,
         stock: stockP.value,
-        detalle: detalleP.value,
-        imagen: localStorage.getItem('imgTemp')
+        description: detalleP.value,
+        image: localStorage.getItem('imgTemp')
 
     }
 
     localStorage.removeItem('imgTemp');
     productos.push(objeto);
 
-    localStorage.setItem('productos', JSON.stringify(productos))
+    localStorage.setItem('products', JSON.stringify(productos))
     alert('Se registro ' + nombreP.value)
-
+    console.log(objeto);
 
     nombreP.value = "";
     precioP.value = "";
@@ -162,8 +162,8 @@ function mostrarFormulario() {
     contenido.style.opacity = '50%'
 
 }
-function mostrarFormularioUsuario(){
- location.replace('registro.html')
+function mostrarFormularioUsuario() {
+    location.replace('registro.html')
 
 }
 function quitarFormulario() {
@@ -203,7 +203,7 @@ function removeUser(mail) {
 }
 
 //sells
-var Sells=JSON.parse(localStorage.getItem('sells'))
+var Sells = JSON.parse(localStorage.getItem('sells'))
 function displaysells(Sells) {
     let ids = Sells.map(x => x.id)
     console.log(Sells);
@@ -211,8 +211,8 @@ function displaysells(Sells) {
     let name = ''
     for (let i = 0; i < ids.length; i++) {
         compra = productos.filter(productos => productos.id === ids[i]);
-        name += compra[0].name +" cantidad "+ Sells[i].stock + "<br>";
+        name += compra[0].name + " cantidad " + Sells[i].stock + "<br>";
     }
-   
-   return name
+
+    return name
 }
