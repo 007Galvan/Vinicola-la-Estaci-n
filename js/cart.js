@@ -113,7 +113,7 @@ out.addEventListener('click', () => {
         date: today,
         total: totaladd
     }
-    delstock()
+    //delstock()
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.setItem('carrito', '[]')
@@ -152,6 +152,7 @@ const guardarCarros = () => {
     }
 }
 
+/*
 function delstock() {
     let carrito = JSON.parse(localStorage.getItem("carrito"))
     let update = JSON.parse(localStorage.getItem('products'))
@@ -173,3 +174,4 @@ function delstock() {
         localStorage.setItem('products', nwstock)
     }
 }
+*/
