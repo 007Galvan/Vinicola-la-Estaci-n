@@ -226,12 +226,12 @@ h1,
 
 /* admin panel  */
 .content {
-
+    display: block;
     height : 100%;
-    width  : 90%;
-    margin : 0 5%;
+    width: 90%;
+    margin : 0 auto;
     padding: 15px;
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
     opacity: 100%;
 }

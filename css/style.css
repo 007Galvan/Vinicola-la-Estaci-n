@@ -58,8 +58,9 @@ a {
 .z-index{
     z-index: 2;
     position: absolute;
-    margin-left: 25%;
-    margin-top: 0%;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 /*home.html*/
 .card {

@@ -6,6 +6,7 @@ table {
 }
 td {
     border: 0px solid white;
+    text-align: center;
 }
 th {
     text-align: center;
@@ -51,4 +52,88 @@ body {
 }
 form{
     padding: 50px;
+}
+.stats-container {
+    display: grid;
+    align-items: center;
+    grid-gap: 10px;
+    grid-template-rows: 1;
+    grid-template-columns: repeat(4, 1fr);
+}
+.stats-card {
+    width: 250px;
+    height: 200px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #802bd6 0%, #7a4faa 100%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stats-card:hover {
+    transform: scale(1.1);
+    transition: 0.5s cubic-bezier(.26,.81,.45,1.5);
+}
+.stats-card:not(:hover) {
+    transform: scale(1);
+    transition: 0.2s ease-in;
+}
+h2.white-text {
+    color: #fff;
+}
+@media screen and (max-width: 1150px) {
+    .stats-card {
+      width: fit-content;
+      padding: 5px;
+    }
+}
+@media screen and (max-width: 800px) {
+    h2.white-text {
+        font-size: 25px;
+    }
+    .stats-card {
+        height: auto;
+    }
+}
+@media screen and (max-width: 615px) {
+    .stats-container {
+      grid-template-rows: 2;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+    }
+    .stats-card {
+        width: 200px;
+        height: auto;
+        padding: 10px;
+    }
+    h2.white-text {
+        font-size: 16px;
+        display: block;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .stats-card {
+        width: 300px;
+        height: auto;
+        padding: 10px;
+    }
+    h2.white-text {
+        font-size: 16px;
+        display: inline;
+    }
+    form.xnxx {
+        padding: 10px;
+        margin: 1vw;
+    }
+    button.quitarFormulario {
+        margin: 0;;
+    }
+    .button-add {
+        padding: 10px;
+    }
 }

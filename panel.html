@@ -34,7 +34,7 @@
     <!-- panel  -->
 
     <div class="formRegistro" id="formulario">
-        <form action="javascript:void(0);"  >
+        <form class="xnxx" action="javascript:void(0);"  >
             <button class="quitarFormulario" onclick="quitarFormulario()">&times;</button>
             <div class="form-group">
                 <p>Nombre del Producto</p>
@@ -64,17 +64,30 @@
 
     <div class="content" id="content">
         <h2>Panel de administración</h2>
-        
-
-
+        <div class="stats-container">
+            <div class="stats-card">
+                <h2 class="white-text">Productos registrados:</h2>
+                <h2 id="total1" class="white-text">213</h2>
+            </div>
+            <div class="stats-card">
+                <h2 class="white-text">Usuarios registrados:</h2>
+                <h2 id="total2"  class="white-text">3</h2>
+            </div>
+            <div class="stats-card">
+                <h2 class="white-text">Pedidos totales:</h2>
+                <h2 id="total3" class="white-text">5</h2>
+            </div>
+            <div class="stats-card">
+                <h2 class="white-text">Total de ventas:</h2>
+                <h2 id="total4" class="white-text">$ 7900</h2>
+            </div>
+        </div>
         <div id="box">
             <!-- cards  -->
             <div class="box-top">
                 <p>Productos</p>
                 <button class="button-add" onclick="mostrarFormulario()"><b>Agregar Producto</b></button>
             </div>
-
-
 
             <div class="box-panel" id="products">
                 <!-- cards -->
@@ -88,6 +101,7 @@
                 <button class="button-add" onclick="mostrarFormularioUsuario()"><b>Agregar usuario</b></button>
             </div>
             <div class="box-panel">
+                <div style="overflow-x:auto;">
                 <table id="users">
                     <thead>
                         <tr>
@@ -100,9 +114,9 @@
                     </thead>
                     <tbody id="usersIn">
 
-
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
         <!-- users -->
@@ -112,24 +126,24 @@
                 <p class="text-color">Pedidos</p>
             </div>
             <div class="box-panel">
+                <div style="overflow-x:auto;">
                 <table id="sales">
                     <thead>
                         <tr>
                             <th>Usuario</th>
                             <th>Compra</th>
                             <th>Fecha</th>
-                            <th>total</th>
+                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody id="salesIn">
 
                     </tbody>
                 </table>
-
+            </div>
             </div>
         </div>
         <!-- sales -->
-
 
     </div>
     

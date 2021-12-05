@@ -20,7 +20,22 @@ window.addEventListener('load', () => {
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     sell = JSON.parse(localStorage.getItem('sells'));
 
-    //console.log(sell);
+    let totalProducts = productos.length;
+    let totalUsers = usuarios.length;
+    let totalSells = sell.length;
+    let totalX = 0; 
+    sell.forEach(orders => {
+        totalX += orders.total;
+    })
+
+    document.getElementById("total1").innerHTML = totalProducts;
+    document.getElementById("total2").innerHTML = totalUsers - 1;
+    document.getElementById("total3").innerHTML = totalSells;
+    document.getElementById("total4").innerHTML = `$ ${totalX}`;
+
+    console.log(totalProducts);
+    console.log(totalUsers);
+    console.log(totalSells);
 
     if (productos.length == 0) {
         productos = [];
@@ -206,12 +221,11 @@ function removeUser(mail) {
 var Sells=JSON.parse(localStorage.getItem('sells'))
 function displaysells(Sells) {
     let ids = Sells.map(x => x.id)
-    console.log(Sells);
 
     let name = ''
     for (let i = 0; i < ids.length; i++) {
         compra = productos.filter(productos => productos.id === ids[i]);
-        name += compra[0].name +" cantidad "+ Sells[i].stock + "<br>";
+        name += compra[0].name.substring(0, 40) +" <em>Cantidad:</em> "+ Sells[i].stock + "<br>";
     }
    
    return name
