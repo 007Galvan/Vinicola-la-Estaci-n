@@ -8,7 +8,7 @@ function myFunction() {
 }
  
 var name1=document.getElementById('nombre');
-var email=document.getElementById('correo');
+var emailU=document.getElementById('correo');
 var topic=document.getElementById('asunto');
 var message=document.getElementById('mensaje');
 var mensajes=[];
@@ -21,13 +21,13 @@ function sendMessage(){
   }
 
   if(name1.value==""){return}
-  if(email.value==""){return}
+  if(emailU.value==""){return}
   if(topic.value==""){return}
   if(message.value==""){return}
  
   var objeto={
     nombre: name1.value,
-    correo: email.value,
+    correo: emailU.value,
     asunto: topic.value,
     Mensaje: message.value
   }
@@ -36,7 +36,7 @@ function sendMessage(){
   localStorage.setItem('mensajes', JSON.stringify(mensajes))
   alert('Se envío tu mensaje')
   name1.value="";
-  email.value="";
+  emailU.value="";
   topic.value="";
   message.value="";
 
