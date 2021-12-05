@@ -3,7 +3,6 @@ var content = document.querySelector('.shopping')
 var carrito = []
 var productos = [];
 var totaladd = 0;
-var out = document.querySelector('#check')
 var compra;
 
 var moreless = document.querySelector('#buy')
@@ -54,7 +53,7 @@ function render() {
 }
 
 function prices(compra, data) {
- var cant= data.stock * compra.price 
+    var cant = data.stock * compra.price
     return cant
 }
 function morestock(id, stock) {
@@ -96,12 +95,16 @@ function del(id) {
 if (localStorage.getItem('sells') == null) {
     localStorage.setItem('sells', '[]')
 }
+
+
+//boton finalizar y pagar
+var out = document.querySelector('#check')
 out.addEventListener('click', () => {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
-    today = mm + ' / ' + dd + ' / ' + yyyy;
+    today = dd + ' / ' + mm + ' / ' + yyyy;
 
     let sells = JSON.parse(localStorage.getItem('sells'))
     let venta = {
@@ -110,11 +113,13 @@ out.addEventListener('click', () => {
         date: today,
         total: totaladd
     }
+    delstock()
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.setItem('carrito', '[]')
-    location.reload()
+    // location.reload()
 })
+
 /*cerrar sesion */
 var close = document.getElementById('close')
 close.addEventListener('click', () => {
@@ -144,5 +149,27 @@ const guardarCarros = () => {
     } else {
         carrosGuardados.push(carritoUser)
         localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
+    }
+}
+
+function delstock() {
+    let carrito = JSON.parse(localStorage.getItem("carrito"))
+    let update = JSON.parse(localStorage.getItem('products'))
+
+    for (let i = 0; i < carrito.length; i++) {
+        let found = update.find(x => x.id == carrito[i].id)
+        let nwstock = update.find(update => update.id === found.id);
+        nwstock.stock -= carrito[i].stock
+        console.log(found);
+        console.log(nwstock);
+
+
+        let found = update.find(x => x.id == nwstock.id)
+        const index = update.indexOf(found)
+        if (index > - 1) update.splice(index, 1)
+        update.push(nwstock)
+        
+        localStorage.setItem('carrito', JSON.stringify(update))
+        localStorage.setItem('products', nwstock)
     }
 }
