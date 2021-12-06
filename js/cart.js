@@ -117,7 +117,16 @@ out.addEventListener('click', () => {
     let cantARestar = venta.prodcutos;
     console.log(cantARestar);
 
-    
+    const actualizarProductos = () => {
+        for (let i = 0; i < cantARestar.length; i++) {
+            productosLS.forEach((x) => {
+                if (x.id == cantARestar[i].id) {
+                    console.log(x);
+                }
+            }) 
+        }
+    }
+    actualizarProductos();
     
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
