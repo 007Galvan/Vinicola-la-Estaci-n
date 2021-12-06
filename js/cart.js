@@ -113,10 +113,16 @@ out.addEventListener('click', () => {
         date: today,
         total: totaladd
     }
-    //delstock()
+    let productosLS = JSON.parse(localStorage.getItem('products'));
+    let cantARestar = venta.prodcutos;
+    console.log(cantARestar);
+
+    
+    
     sells.push(venta)
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.setItem('carrito', '[]')
+
     // location.reload()
 })
 
@@ -151,27 +157,3 @@ const guardarCarros = () => {
         localStorage.setItem("carrosGuardados", JSON.stringify(carrosGuardados))
     }
 }
-
-/*
-function delstock() {
-    let carrito = JSON.parse(localStorage.getItem("carrito"))
-    let update = JSON.parse(localStorage.getItem('products'))
-
-    for (let i = 0; i < carrito.length; i++) {
-        let found = update.find(x => x.id == carrito[i].id)
-        let nwstock = update.find(update => update.id === found.id);
-        nwstock.stock -= carrito[i].stock
-        console.log(found);
-        console.log(nwstock);
-
-
-        let found = update.find(x => x.id == nwstock.id)
-        const index = update.indexOf(found)
-        if (index > - 1) update.splice(index, 1)
-        update.push(nwstock)
-        
-        localStorage.setItem('carrito', JSON.stringify(update))
-        localStorage.setItem('products', nwstock)
-    }
-}
-*/
