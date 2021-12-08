@@ -6,11 +6,12 @@ if (!localStorage.getItem("carrosGuardados")) {
     localStorage.setItem("carrosGuardados", "[]");
 }
 
+
 function mostrarDatos() {
     JSON.parse(localStorage.getItem("products")).slice().reverse().forEach(info => {
 
         cuerpo.innerHTML += `<div class="card animals">
-        <img class="card-img" src="${info.image}" alt="" >
+        <img class="card-img" src="${info.image}" onClick="see(${info.id})" alt="" >
         <p>${info.name}</p>
         <p>$${info.price}</p>
         <button class="add-to-cart" id="buy" onClick="buy(${info.id}) " >Agregar al carrito</button>
@@ -120,4 +121,8 @@ function UsName(){
     names = JSON.parse(sessionStorage.getItem('logged'))
     username = users.find(users => users.email === names);
     return `: ${username.name}`
+}
+function see(id){
+        localStorage.setItem('detail', JSON.stringify(id))
+    location.href = '../detail.html'
 }

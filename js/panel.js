@@ -150,8 +150,8 @@ function agregarProducto() {
     var objeto = {
         id: GetId(),
         name: nombreP.value,
-        price: precioP.value,
-        stock: stockP.value,
+        price: parseInt(precioP.value),
+        stock: parseInt(stockP.value),
         description: detalleP.value,
         image: localStorage.getItem('imgTemp')
 
