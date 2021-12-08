@@ -27,7 +27,8 @@ const registrarse = () => {
     } else if (password === pass2  && document.getElementById("radio").checked == true) {
         parsedUsers.push(objetoLS);
         localStorage.setItem("usuarios", JSON.stringify(parsedUsers));
-        document.getElementById("form").reset();
+       // document.getElementById("form").reset();
+       location.href="../login.html"
         alert("Registro exitoso");
     } else if (document.getElementById("radio").checked == false) {
         alert("Debes aceptar los términos");
