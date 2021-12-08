@@ -20,10 +20,16 @@ window.addEventListener('load', () => {
     usuarios = JSON.parse(localStorage.getItem('usuarios'));
     sell = JSON.parse(localStorage.getItem('sells'));
 
-    let totalProducts = productos.length;
-    let totalUsers = usuarios.length;
+
+    let totalProducts;
+    let totalUsers 
     let totalSells = sell.length;
     let totalX = 0; 
+
+    if(productos == null)totalProducts = 0; else totalProducts = productos.length;
+    if(usuarios == null)totalUsers = 0; else totalUsers = usuarios.length;
+    if(sell == null)totalSells = 0; else totalSells = sell.length;
+
     sell.forEach(orders => {
         totalX += orders.total;
     })
@@ -33,15 +39,12 @@ window.addEventListener('load', () => {
     document.getElementById("total3").innerHTML = totalSells;
     document.getElementById("total4").innerHTML = `$ ${totalX}`;
 
-    console.log(totalProducts);
-    console.log(totalUsers);
-    console.log(totalSells);
 
-    if (productos.length == 0) {
+    if (productos == null || productos.length == 0 ) {
         productos = [];
         //console.log("productos.length = 0");
         products.innerHTML = "No hay productos que mostrar";
-        renderData();
+        //renderData();
     }
     if (usuarios == null) {
         usuarios = [];

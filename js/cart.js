@@ -122,7 +122,6 @@ out.addEventListener('click', () => {
         for (let i = 0; i < cantARestar.length; i++) {
             productosLS.forEach((x) => {
                 if (x.id == cantARestar[i].id) {
-
                     x.stock -= venta.prodcutos[i].stock
                     console.log(venta.prodcutos[i].stock);
                     console.log(x);
