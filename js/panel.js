@@ -23,12 +23,12 @@ window.addEventListener('load', () => {
 
     let totalProducts;
     let totalUsers 
-    let totalSells = sell.length;
+    let totalSells;
     let totalX = 0; 
 
     if(productos == null)totalProducts = 0; else totalProducts = productos.length;
     if(usuarios == null)totalUsers = 0; else totalUsers = usuarios.length;
-    if(sell == null)totalSells = 0; else totalSells = sell.length;
+    if(sell == null)totalSells = 0, sell=[]; else totalSells = sell.length;
 
     sell.forEach(orders => {
         totalX += orders.total;
