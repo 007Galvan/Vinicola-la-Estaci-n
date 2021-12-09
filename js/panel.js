@@ -57,7 +57,7 @@ window.addEventListener('load', () => {
 
     productos.forEach(info => {
         products.innerHTML += `
-            <div class="image-block" id="card">
+            <div class="image-block animals" id="card">
             <img src="${info.image}" alt="" />
             <div id="botton">
             <p>ID: ${info.id}</p>
@@ -106,7 +106,7 @@ const renderData = () => {
     products.innerHTML = "";
     JSON.parse(localStorage.getItem("products")).forEach(info => {
         products.innerHTML += `
-    <div class="image-block" id="card">
+    <div class="image-block animals" id="card">
     <img src="${info.image}" alt="" />
     <div id="botton">
     <p>ID: ${info.id}</p>
