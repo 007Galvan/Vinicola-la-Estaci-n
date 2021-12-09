@@ -36,20 +36,11 @@ var find = products.find(x =>x.id == detail)
         var swatches = vibrant.swatches()
         for (var swatch in swatches) {
             if (swatches.hasOwnProperty(swatch) && swatches[swatch]) {
-                console.log(swatch, swatches[swatch].getHex())
-                // = swatches[0].getHex();
+                console.log("si")
             }
         }
         let vibrante = vibrant.VibrantSwatch.getHex();
-        
-        /*
-         * Results into:
-         * Vibrant #7a4426
-         * Muted #7b9eae
-         * DarkVibrant #348945
-         * DarkMuted #141414
-         * LightVibrant #f3ccb4
-         */
+
         console.log(vibrant);
         console.log(vibrante);
         document.querySelector(".wrapper").style.background = vibrante;
