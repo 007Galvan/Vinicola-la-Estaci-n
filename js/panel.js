@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
         <td>${orders.user}</td>
         <td>${displaysells(orders.prodcutos)}</td>
         <td>${orders.date}</td>
-        <td>${orders.total}</td>
+        <td>$${orders.total}</td>
         </tr>`
     })
 })
