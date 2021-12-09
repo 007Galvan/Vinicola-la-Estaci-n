@@ -14,8 +14,8 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-size: 14px;
-	line-height: 1.7;
+	font-size: 16px;
+	line-height: 2;
 	color: #666666;
 	margin: 0px;
 	transition: all 0.4s;
@@ -395,10 +395,16 @@ textarea.input1 + .shadow-input1 {
     visibility: visible;
     opacity: 1;
   }
+  header {
+    padding: 5px;
+  }
 }
 .brand-name{
   color: #000;
 }
 body {
   padding: 0;
+}
+.hide {
+  display: none;
 }

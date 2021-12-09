@@ -138,6 +138,7 @@ out.addEventListener('click', () => {
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.setItem('carrito', '[]')
     location.reload()
+    alert("El carrito está vacío");
 })
 
 /*cerrar sesion */

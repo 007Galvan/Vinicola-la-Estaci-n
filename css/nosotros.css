@@ -246,3 +246,15 @@ body {
 body {
   padding-top: 5px;
 }
+@media screen and (max-width: 480px) {
+  .brand-name {
+      display: none;
+  }
+  .EstImg {
+      display: none;
+  }
+}
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
