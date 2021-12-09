@@ -19,8 +19,11 @@ var find = products.find(x =>x.id == detail)
             ${find.description}
             </p>
             <p class="price-text">$ ${find.price}</p>
+            <div class="button-wrapper">
             <button class="add-to-cart">Comprar</button>
+            
             <button class="add-to-cart2" onclick="regresar()">Regresar</button>
+            </div>
         </div>
         <div class="wrapper">
         <img class="imagensita" width="300px" src="${find.image}" alt="">
