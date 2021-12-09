@@ -20,7 +20,7 @@ const login = () => {
     let parsedUsers = JSON.parse(localStorage.getItem("usuarios"));
 
     if(email.value==="admin@correo.com" && password.value === "admin123"){
-        location.href = "./panel.html";
+        location.href = "../www/panel.html";
     }
     else{
         if (parsedUsers.some(x => x.email === email.value)) {
@@ -28,7 +28,7 @@ const login = () => {
             if (password.value === atob(found[0].password)) {
 
                 sessionStorage.setItem("logged", JSON.stringify(email.value));
-                location.href = "./products.html";
+                location.href = "../www/products.html";
                 alert("Acceso correcto");
                 
                 

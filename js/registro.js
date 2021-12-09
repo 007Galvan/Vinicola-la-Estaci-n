@@ -1,7 +1,7 @@
 let users = [];
 
 const redirect = () => {
-    location.href ="./registro.html";
+    location.href ="../www/registro.html";
 }
 
 const registrarse = () => {

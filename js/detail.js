@@ -3,7 +3,7 @@ var products = []
 let contenedor = document.querySelector(".info-container");
 
 const regresar = () => {
-    location.href = "../products.html";
+    location.href = "../www/products.html";
 }
 
 addEventListener('load', ()=>{

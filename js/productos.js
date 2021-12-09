@@ -124,5 +124,5 @@ function UsName(){
 }
 function see(id){
         localStorage.setItem('detail', JSON.stringify(id))
-    location.href = '../detail.html'
+    location.href = '../www/detail.html'
 }
