@@ -20,7 +20,7 @@ var find = products.find(x =>x.id == detail)
             </p>
             <p class="price-text">$ ${find.price}</p>
             <div class="button-wrapper">
-            <button class="add-to-cart">Comprar</button>
+            <button class="add-to-cart" onClick="addToCart(${find.id})">Comprar</button>
             
             <button class="add-to-cart2" onclick="regresar()">Regresar</button>
             </div>
@@ -58,5 +58,24 @@ function see(){
     if (localStorage.getItem('carrito') == null) {
         localStorage.setItem('carrito', '[]')
         console.log('No existe')
+    }
+}
+function addToCart(id){
+    var cart = {
+        id: id,
+        stock: 1
+    }
+
+    let carritols = JSON.parse(localStorage.getItem('carrito'))
+    let founded = carritols.find(x => x.id == cart.id)
+    if (founded == null) {
+        carritols.push(cart);
+        localStorage.setItem('carrito', JSON.stringify(carritols))
+        document.getElementById("xyz").innerHTML = `
+        <img src="./img/icons/shopping-cart.png" width="30px" alt="">
+                <span class="span"> ${JSON.parse(localStorage.getItem("carrito")).length} </span>
+        `;
+    } else {
+        alert('El producto ya está en el carrito, añade más desde ahí');
     }
 }
