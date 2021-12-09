@@ -1,7 +1,7 @@
 let users = [];
 
 const redirect = () => {
-    location.href ="../registro.html";
+    location.href ="./registro.html";
 }
 
 const registrarse = () => {
@@ -28,7 +28,7 @@ const registrarse = () => {
         parsedUsers.push(objetoLS);
         localStorage.setItem("usuarios", JSON.stringify(parsedUsers));
        // document.getElementById("form").reset();
-       location.href="../login.html"
+       location.href="../www/login.html"
         alert("Registro exitoso");
     } else if (document.getElementById("radio").checked == false) {
         alert("Debes aceptar los términos");

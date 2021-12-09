@@ -483,3 +483,11 @@ body {
         display: none;
     }
 }
+.ddd {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--main-bg-color);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+}
