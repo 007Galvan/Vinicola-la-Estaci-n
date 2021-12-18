@@ -1,3 +1,3 @@
 # la-estacion
 
-Proyecto escolar de una vinícola 👍🤑🍇
+Proyecto escolar acerca de una vinícola, simulando una tienda y usando localStorage como base de datos
