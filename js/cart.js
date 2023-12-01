@@ -138,7 +138,7 @@ out.addEventListener('click', () => {
     localStorage.setItem('sells', JSON.stringify(sells))
     localStorage.setItem('carrito', '[]')
     alert("Compra Registrada Correctamente");
-    location.href="../www/orders.html";
+    location.href="orders.html";
 })
 
 /*cerrar sesion */
